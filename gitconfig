@@ -1,0 +1,31 @@
+[alias]
+	fixup = !GIT_EDITOR=true git rebase --interactive --autosquash --autostash
+
+[commit]
+	gpgSign = true
+
+[core]
+	excludesFile = ~/.gitignore
+
+[diff "ansible-vault"]
+	cachetextconv = false
+	textconv = PAGER=cat ansible-vault view
+
+[init]
+	defaultBranch = main
+
+[merge]
+	tool = vimdiff
+
+[pull]
+	rebase = false
+
+[user]
+	name = Ties Jan Hefting
+	useConfigOnly = true
+
+[includeIf "gitdir:~/Documents/Personal/"]
+	path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/Documents/Smart.pr/"]
+	path = ~/.gitconfig-smartpr

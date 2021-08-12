@@ -1,0 +1,21 @@
+# Always output color, even if piping to a another program
+--color
+
+# Define colors
+--color-filename=bold blue
+--color-match=black on_yellow
+--color-lineno=bold yellow
+--color-colno=bold yellow
+
+# Define directories and files to ignore
+--ignore-dir=__pycache__    # python
+--ignore-file=ext:orig      # git
+
+# Define pager
+--pager=less -FR
+
+# Use smart case sensitivity
+--smart-case
+
+# Always sort files
+--sort-files
