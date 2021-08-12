@@ -10,7 +10,7 @@ config: \
 	source-profile
 
 install: \
-	install-pip3-packages
+	install-pip-packages
 
 
 # Configuration targets
@@ -78,8 +78,8 @@ source-profile:
 
 
 # Installation targets
-install-pip3-packages:
-	pip3 install --requirement pip3-packages.txt
+install-pip-packages:
+	python3 -m pip install --requirement install/pip-packages.txt
 
-upgrade-pip3-packages:
-	pip3 install --upgrade --requirement pip3-packages.txt
+upgrade-pip-packages:
+	python3 -m pip install --upgrade --requirement install/pip-packages.txt
