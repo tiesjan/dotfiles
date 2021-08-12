@@ -16,17 +16,17 @@ install: \
 # Configuration targets
 configure-ack:
 	# Configure Ack globally
-	ln -f -s ${PWD}/ackrc ${HOME}/.ackrc
+	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
 	# Configure Ack for Smart.pr
 	mkdir -p ${HOME}/Documents/Smart.pr/
-	ln -f -s ${PWD}/ackrc-smartpr ${HOME}/Documents/Smart.pr/.ackrc
+	ln -f -s ${PWD}/ack/ackrc-smartpr ${HOME}/Documents/Smart.pr/.ackrc
 
 configure-git:
 	# Configure Git
-	ln -f -s ${PWD}/gitconfig ${HOME}/.gitconfig
-	ln -f -s ${PWD}/gitconfig-personal ${HOME}/.gitconfig-personal
-	ln -f -s ${PWD}/gitconfig-smartpr ${HOME}/.gitconfig-smartpr
-	ln -f -s ${PWD}/gitignore ${HOME}/.gitignore
+	ln -f -s ${PWD}/git/gitconfig ${HOME}/.gitconfig
+	ln -f -s ${PWD}/git/gitconfig-personal ${HOME}/.gitconfig-personal
+	ln -f -s ${PWD}/git/gitconfig-smartpr ${HOME}/.gitconfig-smartpr
+	ln -f -s ${PWD}/git/gitignore ${HOME}/.gitignore
 
 configure-gnome-desktop:
 	# Desktop appearance
@@ -49,28 +49,28 @@ configure-gnome-desktop:
 configure-gpg:
 	# Configure GPG agent
 	mkdir -p ${HOME}/.gnupg/
-	ln -f -s ${PWD}/gpg-agent-config ${HOME}/.gnupg/gpg-agent.conf
+	ln -f -s ${PWD}/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
 
 configure-npm:
 	# Configure NPM
-	ln -f -s ${PWD}/npmrc ${HOME}/.npmrc
+	ln -f -s ${PWD}/npm/npmrc ${HOME}/.npmrc
 
 configure-ssh:
 	# Configure SSH
 	mkdir -p ${HOME}/.ssh/
-	ln -f -s ${PWD}/ssh-config ${HOME}/.ssh/config
+	ln -f -s ${PWD}/ssh/config ${HOME}/.ssh/config
 
 configure-vim:
 	# Configure Vim
-	ln -f -s ${PWD}/vimrc ${HOME}/.vimrc
+	ln -f -s ${PWD}/vim/vimrc ${HOME}/.vimrc
 
-BASHRC_SOURCE_LINE=". ${PWD}/bashrc"
+BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
 source-bashrc:
 	# Source user definitions in .bashrc
 	if [ ! -f ${HOME}/.bashrc ]; then touch ${HOME}/.bashrc; fi
 	grep -qF -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || echo "\n${BASHRC_SOURCE_LINE}" >> ${HOME}/.bashrc
 
-PROFILE_SOURCE_LINE=". ${PWD}/profile"
+PROFILE_SOURCE_LINE=". ${PWD}/bash/profile"
 source-profile:
 	# Source user definitions in .profile
 	if [ ! -f ${HOME}/.profile ]; then touch ${HOME}/.profile; fi
