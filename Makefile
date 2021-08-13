@@ -5,6 +5,7 @@ config: \
 	configure-gpg \
 	configure-npm\
 	configure-ssh \
+	configure-vagrant \
 	configure-vim \
 	source-bashrc \
 	source-profile
@@ -59,6 +60,13 @@ configure-ssh:
 	# Configure SSH
 	mkdir -p ${HOME}/.ssh/
 	ln -f -s ${PWD}/ssh/config ${HOME}/.ssh/config
+
+configure-vagrant:
+	# Configure sudoers for Vagrant
+	getent group vagrant || sudo groupadd vagrant
+	sudo usermod --append --groups vagrant ${USER}
+	sudo cp ${PWD}/vagrant/sudoers /etc/sudoers.d/vagrant
+	sudo chown root:root /etc/sudoers.d/vagrant
 
 configure-vim:
 	# Configure Vim
