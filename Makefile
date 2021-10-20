@@ -4,6 +4,7 @@ config: \
 	configure-gnome-desktop \
 	configure-gpg \
 	configure-npm\
+	configure-pip\
 	configure-ssh \
 	configure-vagrant \
 	configure-vim \
@@ -51,6 +52,11 @@ configure-gpg:
 	# Configure GPG agent
 	mkdir -p ${HOME}/.gnupg/
 	ln -f -s ${PWD}/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
+
+configure-pip:
+	# Configure pip
+	mkdir -p ${HOME}/.config/pip/
+	ln -f -s ${PWD}/pip/pip.conf ${HOME}/.config/pip/pip.conf
 
 configure-npm:
 	# Configure NPM
