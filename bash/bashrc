@@ -20,8 +20,5 @@ export ANSIBLE_VAULT_IDENTITY_LIST="@${HOME}/.vault-personal,@${HOME}/.vault-sma
 # Configure GPG
 export GPG_TTY="$(tty)"
 
-# Configure jq
-export JQ_COLORS="0;33:0;33:0;33:0;39:0;32:0;39:0;39"
-
 # Configure pass
 export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
