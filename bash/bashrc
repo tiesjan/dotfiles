@@ -12,8 +12,8 @@ fi
 # Enable bash completion for aws
 complete -C '`which aws_completer`' aws
 
-# Configure ansible
-export ANSIBLE_CALLBACK_WHITELIST="profile_tasks"
+# Configure Ansible
+export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
 export ANSIBLE_VAULT_IDENTITY_LIST="@${HOME}/.vault-personal,@${HOME}/.vault-smartpr"
 
