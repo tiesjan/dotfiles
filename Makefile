@@ -3,8 +3,8 @@ config: \
 	configure-git \
 	configure-gnome-desktop \
 	configure-gpg \
-	configure-npm\
-	configure-pip\
+	configure-npm \
+	configure-pip \
 	configure-ssh \
 	configure-vagrant \
 	configure-vim \
@@ -82,13 +82,13 @@ BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
 source-bashrc:
 	# Source user definitions in .bashrc
 	if [ ! -f ${HOME}/.bashrc ]; then touch ${HOME}/.bashrc; fi
-	grep -qF -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || echo "\n${BASHRC_SOURCE_LINE}" >> ${HOME}/.bashrc
+	grep --quiet -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || echo "\n${BASHRC_SOURCE_LINE}" >> ${HOME}/.bashrc
 
 PROFILE_SOURCE_LINE=". ${PWD}/bash/profile"
 source-profile:
 	# Source user definitions in .profile
 	if [ ! -f ${HOME}/.profile ]; then touch ${HOME}/.profile; fi
-	grep -qF -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || echo "\n${PROFILE_SOURCE_LINE}" >> ${HOME}/.profile
+	grep --quiet -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || echo "\n${PROFILE_SOURCE_LINE}" >> ${HOME}/.profile
 
 
 # Installation targets

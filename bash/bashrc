@@ -4,7 +4,7 @@ stty -ixon
 # Set default visual editor
 export VISUAL="vim"
 
-# Prefix bash prompt if $VIM is set
+# Prefix Bash prompt if $VIM is set
 if [ -v VIM ]; then
     PS1="[vim] $PS1"
 fi
@@ -20,5 +20,5 @@ export ANSIBLE_VAULT_IDENTITY_LIST="@${HOME}/.vault-personal,@${HOME}/.vault-sma
 # Configure GPG
 export GPG_TTY="$(tty)"
 
-# Configure pass
+# Configure Password Store
 export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
