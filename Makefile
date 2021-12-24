@@ -1,5 +1,6 @@
 config: \
 	configure-ack \
+	configure-docker \
 	configure-git \
 	configure-gnome-desktop \
 	configure-gpg \
@@ -22,6 +23,13 @@ configure-ack:
 	# Configure Ack for Smart.pr
 	mkdir -p ${HOME}/Documents/Smart.pr/
 	ln -f -s ${PWD}/ack/ackrc-smartpr ${HOME}/Documents/Smart.pr/.ackrc
+
+configure-docker:
+	# Add current user to `docker` group
+	getent group docker || sudo groupadd docker
+	sudo usermod --append --groups docker ${USER}
+	# Configure UID/GID remapping namespace for current user
+	echo "{\"userns-remap\": \"${USER}\"}" | sudo tee /etc/docker/daemon.json
 
 configure-git:
 	# Configure Git
