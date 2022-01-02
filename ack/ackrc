@@ -9,6 +9,7 @@
 
 # Define directories and files to ignore
 --ignore-dir=__pycache__    # python
+--ignore-dir=htmlcov        # coverage.py
 --ignore-file=ext:orig      # git
 
 # Define pager

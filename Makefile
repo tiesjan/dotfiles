@@ -18,11 +18,8 @@ install: \
 
 # Configuration targets
 configure-ack:
-	# Configure Ack globally
+	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
-	# Configure Ack for Smart.pr
-	mkdir -p ${HOME}/Documents/Smart.pr/
-	ln -f -s ${PWD}/ack/ackrc-smartpr ${HOME}/Documents/Smart.pr/.ackrc
 
 configure-docker:
 	# Add current user to `docker` group
