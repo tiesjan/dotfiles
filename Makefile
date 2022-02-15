@@ -47,11 +47,8 @@ configure-gnome-desktop:
 	gsettings set org.gnome.software download-updates false
 	gsettings set org.gnome.software download-updates-notify false
 	
-	# Ignore directories in GNOME Tracker
-	mkdir -p ${HOME}/Documents/Smart.pr/
-	if [ ! -f ${HOME}/Documents/Smart.pr/.trackerignore ]; then touch ${HOME}/Documents/Smart.pr/.trackerignore; fi
-	mkdir -p ${HOME}/Documents/VirtualBox/
-	if [ ! -f ${HOME}/Documents/VirtualBox/.trackerignore ]; then touch ${HOME}/Documents/VirtualBox/.trackerignore; fi
+	# Ignore home directory in GNOME Tracker
+	if [ ! -f ${HOME}/.trackerignore ]; then touch ${HOME}/.trackerignore; fi
 
 configure-gpg:
 	# Configure GPG agent
