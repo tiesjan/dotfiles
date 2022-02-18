@@ -9,9 +9,6 @@ if [ -v VIM ]; then
     PS1="[vim] $PS1"
 fi
 
-# Enable bash completion for aws
-complete -C '`which aws_completer`' aws
-
 # Configure Ansible
 export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
