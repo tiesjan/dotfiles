@@ -1,11 +1,2 @@
 Host *
     HashKnownHosts no
-
-Host *.smartpr.test
-    User vagrant
-    UserKnownHostsFile /dev/null
-    StrictHostKeyChecking no
-    PasswordAuthentication no
-    IdentityFile /home/tiesjan/.vagrant.d/insecure_private_key
-    IdentitiesOnly yes
-    LogLevel FATAL

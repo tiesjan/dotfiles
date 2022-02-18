@@ -26,6 +26,3 @@
 
 [includeIf "gitdir:~/Documents/Personal/"]
 	path = ~/.gitconfig-personal
-
-[includeIf "gitdir:~/Documents/Smart.pr/"]
-	path = ~/.gitconfig-smartpr
