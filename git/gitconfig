@@ -22,7 +22,6 @@
 
 [user]
 	name = Ties Jan Hefting
+	email = hello@tiesjan.com
+	signingKey = 7A5C20CD679D91CB
 	useConfigOnly = true
-
-[includeIf "gitdir:~/Documents/Personal/"]
-	path = ~/.gitconfig-personal

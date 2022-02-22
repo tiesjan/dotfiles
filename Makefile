@@ -31,7 +31,6 @@ configure-docker:
 configure-git:
 	# Configure Git
 	ln -f -s ${PWD}/git/gitconfig ${HOME}/.gitconfig
-	ln -f -s ${PWD}/git/gitconfig-personal ${HOME}/.gitconfig-personal
 	ln -f -s ${PWD}/git/gitignore ${HOME}/.gitignore
 
 configure-gnome-desktop:
