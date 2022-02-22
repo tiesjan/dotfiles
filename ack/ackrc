@@ -8,9 +8,11 @@
 --color-colno=bold yellow
 
 # Define directories and files to ignore
---ignore-dir=__pycache__    # python
---ignore-dir=htmlcov        # coverage.py
---ignore-file=ext:orig      # git
+--ignore-dir=.tox
+--ignore-dir=__pycache__
+--ignore-dir=htmlcov
+--ignore-dir=venv
+--ignore-file=ext:orig
 
 # Define pager
 --pager=less -FR
