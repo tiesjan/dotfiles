@@ -62,10 +62,12 @@ configure-npm:
 	# Configure NPM
 	ln -f -s ${PWD}/npm/npmrc ${HOME}/.npmrc
 
+SSH_INCLUDE_LINE="Include ${PWD}/ssh/config"
 configure-ssh:
 	# Configure SSH
 	mkdir -p ${HOME}/.ssh/
-	ln -f -s ${PWD}/ssh/config ${HOME}/.ssh/config
+	if [ ! -f ${HOME}/.ssh/config ]; then touch ${HOME}/.ssh/config; fi
+	grep --quiet -- ${SSH_INCLUDE_LINE} ${HOME}/.ssh/config || echo "\n${SSH_INCLUDE_LINE}" >> ${HOME}/.ssh/config
 
 configure-vagrant:
 	# Configure sudoers for Vagrant
