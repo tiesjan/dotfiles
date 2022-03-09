@@ -11,6 +11,12 @@
 	cachetextconv = false
 	textconv = PAGER=cat ansible-vault view
 
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	smudge = git-lfs smudge -- %f
+
 [init]
 	defaultBranch = main
 
