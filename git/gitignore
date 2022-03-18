@@ -1,5 +1,8 @@
 # Git
 *.orig
 
+# IntelliJ IDEA
+.idea/
+
 # Vim
 *.sw[op]
