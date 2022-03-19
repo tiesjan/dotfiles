@@ -1,0 +1,20 @@
+source ~/.vimrc
+
+
+""" Vim settings
+set showmode
+set visualbell
+
+
+""" IdeaVim settings
+set ideajoin
+set ideastatusicon=gray
+
+
+""" Shortcut handlers (https://jb.gg/vim-sethandler)
+sethandler a:ide                  " default to IDE
+sethandler <C-H> i-v:ide n:vim    " catch accidental presses after <C-W> in Vim
+sethandler <C-L> i-v:ide n:vim    " catch accidental presses after <C-W> in Vim
+sethandler <C-R> i-v:ide n:vim    " redo in Vim
+sethandler <C-V> i-v:ide n:vim    " visual block selection in Vim
+sethandler <C-W> v:ide n-i:vim    " switch windows & delete words in Vim

@@ -4,6 +4,7 @@ config: \
 	configure-git \
 	configure-gnome-desktop \
 	configure-gpg \
+	configure-ideavim \
 	configure-npm \
 	configure-pip \
 	configure-ssh \
@@ -52,6 +53,10 @@ configure-gpg:
 	# Configure GPG agent
 	mkdir -p ${HOME}/.gnupg/
 	ln -f -s ${PWD}/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
+
+configure-ideavim:
+	# Configure IdeaVim
+	ln -f -s ${PWD}/ideavim/ideavimrc ${HOME}/.ideavimrc
 
 configure-pip:
 	# Configure pip
