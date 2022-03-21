@@ -58,6 +58,7 @@ set cursorline
 set encoding=utf-8
 set expandtab shiftwidth=4 softtabstop=4 tabstop=4
 set formatoptions+=j
+set gdefault
 set hlsearch ignorecase incsearch smartcase
 set laststatus=2 noshowmode
 set list listchars=tab:›⋅,trail:⋅,nbsp:~
@@ -67,15 +68,20 @@ set scrolloff=4
 set signcolumn=yes
 set termguicolors
 set textwidth=79
-set ttimeoutlen=10
+set timeout timeoutlen=10
 set ttyfast
 set updatetime=500
 
 
 """ Key mapping
 let mapleader = ','
-"remove trailing whitespace
+" remove trailing whitespace
 nnoremap <leader>rtw :%s/\s\+$//e<CR>
+" switch between windows
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
 
 
 """ Plugin - ALE
