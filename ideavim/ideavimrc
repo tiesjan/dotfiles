@@ -11,10 +11,17 @@ set ideajoin
 set ideastatusicon=gray
 
 
+""" Key mappings
+" open NERDTree
+nnoremap <leader>nt :NERDTree<CR>
+
+
 """ Shortcut handlers (https://jb.gg/vim-sethandler)
 sethandler a:ide                  " default to IDE
-sethandler <C-H> i-v:ide n:vim    " catch accidental presses after <C-W> in Vim
-sethandler <C-L> i-v:ide n:vim    " catch accidental presses after <C-W> in Vim
+sethandler <C-H> i-v:ide n:vim    " switch to window left in Vim
+sethandler <C-J> i-v:ide n:vim    " switch to window below in Vim
+sethandler <C-K> i-v:ide n:vim    " switch to window above in Vim
+sethandler <C-L> i-v:ide n:vim    " switch to window right in Vim
 sethandler <C-R> i-v:ide n:vim    " redo in Vim
-sethandler <C-V> i-v:ide n:vim    " visual block selection in Vim
+sethandler <C-V> i:ide n-v:vim    " visual block selection in Vim
 sethandler <C-W> v:ide n-i:vim    " switch windows & delete words in Vim
