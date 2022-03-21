@@ -35,12 +35,6 @@ configure-git:
 	ln -f -s ${PWD}/git/gitignore ${HOME}/.gitignore
 
 configure-gnome-desktop:
-	# Desktop appearance
-	gsettings set org.gnome.desktop.calendar show-weekdate true
-	gsettings set org.gnome.desktop.interface clock-show-weekday false
-	gsettings set org.gnome.desktop.interface show-battery-percentage true
-	gsettings set org.gnome.desktop.input-sources xkb-options "['compose:ralt']"
-	
 	# Disable updates in GNOME Software
 	gsettings set org.gnome.software allow-updates false
 	gsettings set org.gnome.software download-updates false
