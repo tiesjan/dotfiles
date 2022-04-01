@@ -1,5 +1,8 @@
 [alias]
-	fixup = !GIT_EDITOR=true git rebase --interactive --autosquash --autostash
+	auto-rebase = "!GIT_EDITOR=true git rebase --interactive --autosquash --autostash"
+	fixup = "!git commit --fixup"
+	squash = "!git commit --squash"
+	tree = "log --oneline --graph"
 
 [commit]
 	gpgSign = true
