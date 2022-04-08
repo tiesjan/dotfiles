@@ -6,6 +6,7 @@
 
 [commit]
 	gpgSign = true
+	verbose = true
 
 [core]
 	excludesFile = ~/.gitignore
@@ -13,6 +14,10 @@
 [diff "ansible-vault"]
 	cachetextconv = false
 	textconv = PAGER=cat ansible-vault view
+
+[fetch]
+	prune = true
+	pruneTags = true
 
 [filter "lfs"]
 	required = true
@@ -23,11 +28,17 @@
 [init]
 	defaultBranch = main
 
+[log]
+    abbrevCommit = true
+
 [merge]
 	tool = vimdiff
 
 [pull]
 	rebase = false
+
+[rebase]
+	autoSquash = true
 
 [user]
 	name = Ties Jan Hefting
