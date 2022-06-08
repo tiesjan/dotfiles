@@ -68,7 +68,7 @@ set scrolloff=4
 set signcolumn=yes
 set termguicolors
 set textwidth=79
-set timeout timeoutlen=250 ttimeoutlen=50
+set timeout timeoutlen=500 ttimeoutlen=50
 set ttyfast
 set updatetime=250
 
