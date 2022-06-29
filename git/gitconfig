@@ -11,6 +11,9 @@
 [core]
 	excludesFile = ~/.gitignore
 
+[diff]
+	tool = vimdiff
+
 [diff "ansible-vault"]
 	cachetextconv = false
 	textconv = PAGER=cat ansible-vault view
@@ -29,7 +32,7 @@
 	defaultBranch = main
 
 [log]
-    abbrevCommit = true
+	abbrevCommit = true
 
 [merge]
 	tool = vimdiff
