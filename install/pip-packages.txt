@@ -2,4 +2,3 @@ ansible==4.*
 docker-compose
 flake8
 tox
-youtube-dl
