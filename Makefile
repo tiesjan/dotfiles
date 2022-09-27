@@ -1,6 +1,7 @@
 config: \
 	configure-ack \
 	configure-docker \
+	configure-ghci \
 	configure-git \
 	configure-gnome-desktop \
 	configure-gpg \
@@ -28,6 +29,10 @@ configure-docker:
 	sudo usermod --append --groups docker ${USER}
 	# Configure UID/GID remapping namespace for current user
 	echo "{\"userns-remap\": \"${USER}\"}" | sudo tee /etc/docker/daemon.json
+
+configure-ghci:
+	# Configure GHCi
+	ln -f -s ${PWD}/ghci/ghci ${HOME}/.ghci
 
 configure-git:
 	# Configure Git

@@ -85,6 +85,7 @@ nnoremap <C-L> <C-W>l
 
 
 """ Plugin - ALE
+let g:ale_haskell_ghc_options = '-Wall -fno-code -v0'
 let g:ale_python_flake8_options = '--ignore=E12,E13,E24,E501,W503,W504'
 let g:ale_python_flake8_use_global = 1
 
@@ -117,3 +118,11 @@ let g:vrc_header_content_type = 'application/json; charset=utf-8'
 """ Plugins - YouCompleteMe
 let g:ycm_complete_in_comments = 1
 let g:ycm_auto_hover = ''
+let g:ycm_language_server = [
+  \   {
+  \     'name': 'haskell-language-server',
+  \     'cmdline': ['haskell-language-server-wrapper', '--lsp'],
+  \     'filetypes': ['haskell', 'lhaskell'],
+  \     'project_root_files': ['cabal.project', 'hie.yaml', 'stack.yaml', 'package.yaml'],
+  \   },
+  \ ]
