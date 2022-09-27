@@ -9,6 +9,11 @@ if [ -v VIM ]; then
     PS1="[vim] $PS1"
 fi
 
+# Set alias for running a Nix command
+if (command -v nix > /dev/null); then
+    alias nrc="nix run -c $@"
+fi
+
 # Configure Ansible
 export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
