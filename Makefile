@@ -9,6 +9,7 @@ config: \
 	configure-npm \
 	configure-pip \
 	configure-ssh \
+	configure-tmux \
 	configure-vagrant \
 	configure-vim \
 	source-bashrc \
@@ -72,6 +73,10 @@ configure-ssh:
 	mkdir -p ${HOME}/.ssh/
 	if [ ! -f ${HOME}/.ssh/config ]; then touch ${HOME}/.ssh/config; fi
 	grep --quiet -- ${SSH_INCLUDE_LINE} ${HOME}/.ssh/config || echo "\n${SSH_INCLUDE_LINE}" >> ${HOME}/.ssh/config
+
+configure-tmux:
+	# Configure tmux
+	ln -f -s ${PWD}/tmux/tmux.conf ${HOME}/.tmux.conf
 
 configure-vagrant:
 	# Configure sudoers for Vagrant
