@@ -10,8 +10,14 @@
 
 [core]
 	excludesFile = ~/.gitignore
+	pager = delta
+
+[delta]
+	line-numbers = true
+	navigate = true
 
 [diff]
+	colorMoved = default
 	tool = vimdiff
 
 [diff "ansible-vault"]
@@ -31,10 +37,14 @@
 [init]
 	defaultBranch = main
 
+[interactive]
+	diffFilter = delta --color-only
+
 [log]
 	abbrevCommit = true
 
 [merge]
+	conflictStyle = diff3
 	tool = vimdiff
 
 [pull]
