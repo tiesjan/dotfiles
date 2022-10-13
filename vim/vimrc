@@ -2,7 +2,6 @@
 "install Plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -28,12 +27,9 @@ augroup Autocommands
     autocmd FileType nerdtree setlocal signcolumn=no
 
     "override filetype based on file names
-    autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+    autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 
-    if (&diff)
-        "switch to merge view on startup if one or more views have been opened
-        autocmd VimEnter * if argc() > 0 | wincmd j | endif
-    else
+    if !(&diff)
         "open NERDTree on startup and switch cursor to buffer on the right
         "if one or more files have been opened
         autocmd VimEnter * NERDTree
@@ -69,7 +65,7 @@ set scrolloff=4
 set signcolumn=yes
 set termguicolors
 set textwidth=79
-set timeout timeoutlen=500 ttimeoutlen=50
+set timeout timeoutlen=500 ttimeoutlen=25
 set ttyfast
 set updatetime=250
 set wildmenu
@@ -105,8 +101,8 @@ let g:lightline = {'colorscheme': 'github'}
 
 
 """ Plugins - NERDTree
-let g:NERDTreeDirArrowExpandable = "\u002B"
 let g:NERDTreeDirArrowCollapsible = "\u2212"
+let g:NERDTreeDirArrowExpandable = "\u002B"
 let g:NERDTreeMinimalMenu = 1
 let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeWinSize = 35
@@ -118,8 +114,8 @@ let g:vrc_header_content_type = 'application/json; charset=utf-8'
 
 
 """ Plugins - YouCompleteMe
-let g:ycm_complete_in_comments = 1
 let g:ycm_auto_hover = ''
+let g:ycm_complete_in_comments = 1
 let g:ycm_language_server = [
   \   {
   \     'name': 'haskell-language-server',
