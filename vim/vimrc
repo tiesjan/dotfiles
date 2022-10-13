@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dense-analysis/ale'
     Plug 'diepm/vim-rest-console', {'for': 'rest'}
     Plug 'itchyny/lightline.vim'
+    Plug 'jason0x43/vim-wildgitignore'
     Plug 'preservim/nerdtree', {'on': 'NERDTree'}
     Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 call plug#end()
@@ -71,6 +72,7 @@ set textwidth=79
 set timeout timeoutlen=500 ttimeoutlen=50
 set ttyfast
 set updatetime=250
+set wildmenu
 
 
 """ Key mapping
@@ -105,8 +107,8 @@ let g:lightline = {'colorscheme': 'github'}
 """ Plugins - NERDTree
 let g:NERDTreeDirArrowExpandable = "\u002B"
 let g:NERDTreeDirArrowCollapsible = "\u2212"
-let g:NERDTreeIgnore = ['^__pycache__$', '^node_modules$', '\.orig$', '\.pyc$', '\.sw[op]$']
 let g:NERDTreeMinimalMenu = 1
+let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeWinSize = 35
 
 
