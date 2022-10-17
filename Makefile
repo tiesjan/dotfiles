@@ -1,4 +1,5 @@
 config: \
+	configure-abcde \
 	configure-ack \
 	configure-docker \
 	configure-ghci \
@@ -20,6 +21,10 @@ install: \
 
 
 # Configuration targets
+configure-abcde:
+	# Configure abcde
+	ln -f -s ${PWD}/abcde/abcde.conf ${HOME}/.abcde.conf
+
 configure-ack:
 	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
