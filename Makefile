@@ -39,6 +39,7 @@ configure-docker:
 configure-ghci:
 	# Configure GHCi
 	ln -f -s ${PWD}/ghci/ghci ${HOME}/.ghci
+	chmod 0600 ${HOME}/.ghci
 
 configure-git:
 	# Configure Git
