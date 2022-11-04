@@ -11,7 +11,7 @@ fi
 
 # Set alias for running a Nix command
 if (command -v nix > /dev/null); then
-    alias nrc="nix run -c $@"
+    alias nrc="nix shell --file default.nix -c $@"
 fi
 
 # Configure Ansible
