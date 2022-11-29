@@ -1,4 +1,4 @@
-ansible==4.*
+ansible==7.*
 docker-compose
 flake8
 tox
