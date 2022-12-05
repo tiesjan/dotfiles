@@ -7,6 +7,7 @@ config: \
 	configure-gnome-desktop \
 	configure-gpg \
 	configure-ideavim \
+	configure-libvirt \
 	configure-npm \
 	configure-pip \
 	configure-ssh \
@@ -63,6 +64,11 @@ configure-gpg:
 configure-ideavim:
 	# Configure IdeaVim
 	ln -f -s ${PWD}/ideavim/ideavimrc ${HOME}/.ideavimrc
+
+configure-libvirt:
+	# Add current user to `libvirt` group
+	getent group libvirt || sudo groupadd libvirt
+	sudo usermod --append --groups libvirt ${USER}
 
 configure-pip:
 	# Configure pip
