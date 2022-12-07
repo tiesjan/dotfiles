@@ -1,4 +1,5 @@
 ansible==7.*
-docker-compose
+ansible-lint
 flake8
 tox
+yamllint
