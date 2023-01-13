@@ -9,6 +9,11 @@ if [ -v VIM ]; then
     PS1="[vim] $PS1"
 fi
 
+# Add Bash hook to enable direnv
+if (command -v direnv > /dev/null); then
+    eval "$(direnv hook bash)"
+fi
+
 # Set alias for running a Nix command
 if (command -v nix > /dev/null); then
     alias nrc="nix shell --file default.nix -c" "$@"
