@@ -4,14 +4,14 @@ stty -ixon
 # Set default visual editor
 export VISUAL="vim"
 
-# Prefix Bash prompt if $VIM is set
+# Prefix Bash prompt if started inside Vim
 if [ -v VIM ]; then
     PS1="[vim] $PS1"
 fi
 
 # Set alias for running a Nix command
 if (command -v nix > /dev/null); then
-    alias nrc="nix shell --file default.nix -c $@"
+    alias nrc="nix shell --file default.nix -c" "$@"
 fi
 
 # Configure Ansible
@@ -19,7 +19,8 @@ export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
 
 # Configure GPG
-export GPG_TTY="$(tty)"
+GPG_TTY="$(tty)"
+export GPG_TTY
 
 # Configure Password Store
 export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
