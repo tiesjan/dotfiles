@@ -15,6 +15,7 @@
 [delta]
 	line-numbers = true
 	navigate = true
+	syntax-theme = Dracula
 
 [diff]
 	colorMoved = default

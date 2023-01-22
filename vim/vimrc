@@ -6,9 +6,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
-    Plug 'cormacrelf/vim-colors-github'
     Plug 'dense-analysis/ale'
     Plug 'diepm/vim-rest-console', {'for': 'rest'}
+    Plug 'dracula/vim', {'as': 'dracula'}
     Plug 'itchyny/lightline.vim'
     Plug 'jason0x43/vim-wildgitignore'
     Plug 'preservim/nerdtree', {'on': 'NERDTree'}
@@ -19,9 +19,6 @@ call plug#end()
 """ Autocommands
 augroup Autocommands
     autocmd!
-
-    "color scheme overrides
-    autocmd ColorScheme github highlight! link EndOfBuffer Normal
 
     "hide signcolumn for NERDTree
     autocmd FileType nerdtree setlocal signcolumn=no
@@ -44,7 +41,7 @@ augroup END
 
 
 """ General settings
-colorscheme github
+colorscheme dracula
 set autochdir
 set autoindent
 set background=dark
@@ -98,7 +95,7 @@ let g:gitgutter_sign_removed_first_line = "\u2580"
 
 
 """ Plugins - Lightline
-let g:lightline = {'colorscheme': 'github'}
+let g:lightline = {'colorscheme': 'dracula'}
 
 
 """ Plugins - NERDTree

@@ -32,3 +32,5 @@ export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
 
 # Configure pytest
 export PYTEST_ADDOPTS="-vv"
+export PYTEST_THEME="dracula"
+export PYTEST_THEME_MODE="dark"
