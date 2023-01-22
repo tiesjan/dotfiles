@@ -29,3 +29,6 @@ export GPG_TTY
 
 # Configure Password Store
 export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
+
+# Configure pytest
+export PYTEST_ADDOPTS="-vv"
