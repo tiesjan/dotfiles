@@ -19,6 +19,11 @@ if (command -v nix > /dev/null); then
     alias nrc="nix shell --file default.nix -c" "$@"
 fi
 
+# Bash completions for pipx
+if (command -v pipx > /dev/null); then
+    eval "$(register-python-argcomplete pipx)"
+fi
+
 # Configure Ansible
 export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
@@ -29,6 +34,9 @@ export GPG_TTY
 
 # Configure Password Store
 export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
+
+# Configure pipx
+export USE_EMOJI="False"
 
 # Configure pytest
 export PYTEST_ADDOPTS="-vv"

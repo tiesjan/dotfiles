@@ -18,7 +18,7 @@ config: \
 	source-profile
 
 install: \
-	install-pip-packages
+	install-pipx-packages
 
 
 # Configuration targets
@@ -115,8 +115,5 @@ source-profile:
 
 
 # Installation targets
-install-pip-packages:
-	python3 -m pip install --requirement install/pip-packages.txt
-
-upgrade-pip-packages:
-	python3 -m pip install --upgrade --requirement install/pip-packages.txt
+install-pipx-packages:
+	cat install/pipx-packages.txt | xargs --max-lines=1 pipx install
