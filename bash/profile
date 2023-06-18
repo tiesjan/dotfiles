@@ -1,3 +1,9 @@
 # Add path for manually installed LV2 plugins
 LV2_PATH="${HOME}/Documents/LV2:$LV2_PATH"
 export LV2_PATH
+
+# Configure QT platfom abstraction
+QT_QPA_PLATFORM="wayland"
+QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORM
+export QT_QPA_PLATFORMTHEME
