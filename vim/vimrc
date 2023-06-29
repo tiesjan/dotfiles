@@ -50,13 +50,14 @@ set colorcolumn=+1
 set completeopt=menu
 set cursorline
 set encoding=utf-8
-set expandtab shiftwidth=4 softtabstop=4 tabstop=4
+set expandtab shiftwidth=4 smarttab softtabstop=4 tabstop=4
 set formatoptions+=j
 set gdefault
 set hlsearch ignorecase incsearch smartcase
 set laststatus=2 noshowmode
 set list listchars=tab:›⋅,trail:⋅,nbsp:~
 set mouse=a
+set nojoinspaces
 set number
 set scrolloff=4
 set signcolumn=yes
@@ -77,6 +78,10 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+
+
+""" Filetype plugin - Python
+let g:pyindent_open_paren='shiftwidth()'
 
 
 """ Plugin - ALE
