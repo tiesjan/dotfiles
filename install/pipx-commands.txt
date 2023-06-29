@@ -1,0 +1,3 @@
+install ansible==7.*
+  inject --include-apps ansible ansible-core==2.14.* ansible-lint
+install yamllint

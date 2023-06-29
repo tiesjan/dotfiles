@@ -116,4 +116,4 @@ source-profile:
 
 # Installation targets
 install-pipx-packages:
-	cat install/pipx-packages.txt | xargs --max-lines=1 pipx install
+	cat install/pipx-commands.txt | xargs --max-lines=1 pipx

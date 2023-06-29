@@ -1,4 +1,0 @@
-ansible==7.*
-ansible-core==2.14.*
-ansible-lint
-yamllint
