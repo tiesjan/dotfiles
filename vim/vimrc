@@ -31,11 +31,6 @@ augroup Autocommands
         "if one or more files have been opened
         autocmd VimEnter * NERDTree
         autocmd VimEnter * if argc() > 0 | wincmd l | endif
-
-        "workaround for Lightline not updating after executing `wincmd l` above
-        if !has('patch-8.2.2596')
-            autocmd VimEnter * call lightline#update()
-        endif
     endif
 augroup END
 
