@@ -24,6 +24,11 @@ if (command -v pipx > /dev/null); then
     eval "$(register-python-argcomplete pipx)"
 fi
 
+# Set alias for bulk renaming files using qmv
+if (command -v qmv > /dev/null); then
+    alias bulk-rename="qmv --format=destination-only" "$@"
+fi
+
 # Configure Ansible
 export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
