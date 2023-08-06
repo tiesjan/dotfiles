@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 config: \
 	configure-abcde \
 	configure-ack \
@@ -18,6 +20,7 @@ config: \
 	source-profile
 
 install: \
+	install-apt-packages \
 	install-pipx-packages
 
 
@@ -115,5 +118,8 @@ source-profile:
 
 
 # Installation targets
+install-apt-packages:
+	xargs --arg-file=<(grep --invert-match "^#" install/apt-packages.txt) --no-run-if-empty -- sudo apt-get install --no-install-recommends --yes
+
 install-pipx-packages:
-	cat install/pipx-commands.txt | xargs --max-lines=1 pipx
+	xargs --arg-file=install/pipx-commands.txt --max-lines=1 --no-run-if-empty -- pipx

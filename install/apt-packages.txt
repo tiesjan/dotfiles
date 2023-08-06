@@ -1,0 +1,62 @@
+# Tools
+ack
+curl
+dnsutils
+imagemagick
+jq
+renameutils
+tree
+vim-gtk3
+whois
+
+# Tool: abcde
+abcde
+flac
+vorbis-tools
+
+# Tool: GPG
+gpg
+pinentry-curses
+
+# Tool: Node.js
+nodejs
+npm
+
+# Tools: Python
+pipx
+python3
+python3-pip
+python3-venv
+
+# Tool: tmux
+tmux
+tmux-plugin-manager
+
+
+# Archive files support
+p7zip-full
+
+# Pinyin input support
+ibus-libpinyin
+
+# Qt5 theming
+adwaita-qt
+qt5ct
+
+# Virtualization
+libvirt-daemon-system
+nfs-kernel-server
+qemu-utils
+qemu-system
+vagrant
+vagrant-libvirt
+virt-manager
+
+
+# Requirement for Ansible (installed through pipx)
+sshpass
+
+# Requirements for YouCompleteMe (Vim plugin)
+build-essential
+cmake
+libpython3-dev
