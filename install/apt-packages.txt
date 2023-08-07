@@ -4,6 +4,7 @@ curl
 dnsutils
 imagemagick
 jq
+pass
 renameutils
 tree
 vim-gtk3
