@@ -1,3 +1,6 @@
+[advice]
+	skippedCherryPicks = false
+
 [alias]
 	auto-rebase = "!GIT_EDITOR=true git rebase --interactive --autosquash --autostash"
 	fixup = "commit --fixup"
