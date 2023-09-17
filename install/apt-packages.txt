@@ -6,6 +6,7 @@ imagemagick
 jq
 pass
 renameutils
+shellcheck
 tree
 vim-gtk3
 whois
