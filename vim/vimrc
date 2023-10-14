@@ -26,7 +26,7 @@ augroup Autocommands
     "override filetype based on file names
     autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 
-    if !(&diff)
+    if !(&diff || has('gui_running'))
         "open NERDTree on startup and switch cursor to buffer on the right
         "if one or more files have been opened
         autocmd VimEnter * NERDTree
