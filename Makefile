@@ -11,6 +11,7 @@ config: \
 	configure-libvirt \
 	configure-npm \
 	configure-pip \
+	configure-sqlite3 \
 	configure-ssh \
 	configure-tmux \
 	configure-vagrant \
@@ -73,6 +74,10 @@ configure-pip:
 configure-npm:
 	# Configure NPM
 	ln -f -s ${PWD}/npm/npmrc ${HOME}/.npmrc
+
+configure-sqlite3:
+	# Configure SQLite3
+	ln -f -s ${PWD}/sqlite3/sqliterc ${HOME}/.sqliterc
 
 SSH_INCLUDE_LINE="Include ${PWD}/ssh/config"
 configure-ssh:
