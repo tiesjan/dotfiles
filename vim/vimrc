@@ -65,7 +65,7 @@ set wildmenu
 
 
 """ Key mapping
-let mapleader = ','
+let mapleader = '\'
 " remove trailing whitespace
 nnoremap <leader>rtw :%s/\s\+$//e<CR>
 " switch between windows
