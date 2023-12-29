@@ -20,6 +20,12 @@ if (command -v nix > /dev/null); then
     alias nrc="nix shell --file default.nix -c" "$@"
 fi
 
+# Bash completions for cargo and rustup
+if (command -v rustup > /dev/null); then
+    eval "$(rustup completions bash cargo)"
+    eval "$(rustup completions bash rustup)"
+fi
+
 # Bash completions for pipx
 if (command -v pipx > /dev/null); then
     eval "$(register-python-argcomplete pipx)"
