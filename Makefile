@@ -16,6 +16,7 @@ config: \
 	configure-tmux \
 	configure-vagrant \
 	configure-vim \
+	configure-vscode \
 	source-bashrc \
 	source-profile
 
@@ -100,6 +101,11 @@ configure-vagrant:
 configure-vim:
 	# Configure Vim
 	ln -f -s ${PWD}/vim/vimrc ${HOME}/.vimrc
+
+configure-vscode:
+	# Configure VS Code
+	mkdir -p ${HOME}/.config/Code/User/
+	ln -f -s ${PWD}/vscode/settings.json ${HOME}/.config/Code/User/settings.json
 
 BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
 source-bashrc:

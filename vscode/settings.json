@@ -1,0 +1,8 @@
+{
+    "rust-analyzer.imports.granularity.enforce": true,
+    "rust-analyzer.imports.granularity.group": "item",
+    "vim.gdefault": true,
+    "vim.hlsearch": true,
+    "vim.joinspaces": false,
+    "vim.useSystemClipboard": true,
+}
