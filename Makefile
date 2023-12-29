@@ -3,6 +3,7 @@ SHELL := /bin/bash
 config: \
 	configure-abcde \
 	configure-ack \
+	configure-docker \
 	configure-ghci \
 	configure-git \
 	configure-gnome-desktop \
@@ -33,6 +34,13 @@ configure-abcde:
 configure-ack:
 	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
+
+configure-docker:
+	# Add current user to `docker` group
+	getent group docker || sudo groupadd docker
+	sudo usermod --append --groups docker ${USER}
+	# Configure UID/GID remapping namespace for current user
+	echo "{\"userns-remap\": \"${USER}\"}" | sudo tee /etc/docker/daemon.json
 
 configure-ghci:
 	# Configure GHCi
