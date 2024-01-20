@@ -2,6 +2,7 @@
 ack
 curl
 dnsutils
+ffmpeg
 imagemagick
 jq
 pass
