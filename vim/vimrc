@@ -29,8 +29,9 @@ augroup Autocommands
     if !(&diff || has('gui_running'))
         "open NERDTree on startup and switch cursor to buffer on the right
         "if one or more files have been opened
+        autocmd StdinReadPre * let s:std_in=1
         autocmd VimEnter * NERDTree
-        autocmd VimEnter * if argc() > 0 | wincmd l | endif
+        autocmd VimEnter * if argc() > 0 && !exists('s:std_in') | wincmd l | endif
     endif
 augroup END
 
