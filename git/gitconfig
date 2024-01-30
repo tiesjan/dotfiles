@@ -28,6 +28,9 @@
 	cachetextconv = false
 	textconv = PAGER=cat ansible-vault view
 
+[diff "lfs"]
+	textconv = cat
+
 [fetch]
 	prune = true
 	pruneTags = true
