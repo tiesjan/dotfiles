@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'diepm/vim-rest-console', {'for': 'rest'}
     Plug 'dracula/vim', {'as': 'dracula'}
     Plug 'itchyny/lightline.vim'
-    Plug 'jason0x43/vim-wildgitignore'
     Plug 'preservim/nerdtree', {'on': 'NERDTree'}
     Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 call plug#end()
