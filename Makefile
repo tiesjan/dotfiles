@@ -93,7 +93,7 @@ configure-ssh:
 	# Configure SSH
 	mkdir -p ${HOME}/.ssh/
 	if [ ! -f ${HOME}/.ssh/config ]; then touch ${HOME}/.ssh/config; fi
-	grep --quiet -- ${SSH_INCLUDE_LINE} ${HOME}/.ssh/config || echo "\n${SSH_INCLUDE_LINE}" >> ${HOME}/.ssh/config
+	grep --line-regexp --fixed-strings --quiet -- ${SSH_INCLUDE_LINE} ${HOME}/.ssh/config || echo "\n${SSH_INCLUDE_LINE}" >> ${HOME}/.ssh/config
 
 configure-tmux:
 	# Configure tmux
@@ -119,13 +119,13 @@ BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
 source-bashrc:
 	# Source user definitions in .bashrc
 	if [ ! -f ${HOME}/.bashrc ]; then touch ${HOME}/.bashrc; fi
-	grep --quiet -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || echo "\n${BASHRC_SOURCE_LINE}" >> ${HOME}/.bashrc
+	grep --line-regexp --fixed-strings --quiet -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || echo "\n${BASHRC_SOURCE_LINE}" >> ${HOME}/.bashrc
 
 PROFILE_SOURCE_LINE=". ${PWD}/bash/profile"
 source-profile:
 	# Source user definitions in .profile
 	if [ ! -f ${HOME}/.profile ]; then touch ${HOME}/.profile; fi
-	grep --quiet -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || echo "\n${PROFILE_SOURCE_LINE}" >> ${HOME}/.profile
+	grep --line-regexp --fixed-strings --quiet -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || echo "\n${PROFILE_SOURCE_LINE}" >> ${HOME}/.profile
 
 
 # Installation targets
