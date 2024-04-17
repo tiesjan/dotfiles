@@ -1,2 +1,9 @@
 Host *
     HashKnownHosts no
+
+Host raspberrypi.local
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+Match host "dj-toolbox.local" exec "test %p = 22"
+  RemoteForward 60022
