@@ -45,7 +45,7 @@ GPG_TTY="$(tty)"
 export GPG_TTY
 
 # Configure Password Store
-export PASSWORD_STORE_DIR="${HOME}/Documents/Personal/secrets"
+export PASSWORD_STORE_DIR="${HOME}/Documents/secrets"
 
 # Configure pipx
 export USE_EMOJI="False"
