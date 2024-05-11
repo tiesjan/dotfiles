@@ -40,6 +40,9 @@ tmux-plugin-manager
 # Archive files support
 p7zip-full
 
+# HEIC image viewing support
+heif-gdk-pixbuf
+
 # Pinyin input support
 ibus-libpinyin
 
