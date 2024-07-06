@@ -39,6 +39,7 @@ fi
 # Configure Ansible
 export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
+export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/.ansible-vault-password"
 
 # Configure GPG
 GPG_TTY="$(tty)"
