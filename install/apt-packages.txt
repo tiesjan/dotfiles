@@ -7,6 +7,7 @@ imagemagick
 jq
 pass
 renameutils
+ruby-full
 shellcheck
 sqlite3
 tree

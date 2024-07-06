@@ -55,3 +55,7 @@ export USE_EMOJI="False"
 export PYTEST_ADDOPTS="-vv"
 export PYTEST_THEME="dracula"
 export PYTEST_THEME_MODE="dark"
+
+# Configure Ruby Gems
+export GEM_HOME="${HOME}/.gems"
+export PATH="${HOME}/.gems/bin:${PATH}"
