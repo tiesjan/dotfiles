@@ -1,6 +1,10 @@
 Host *
     HashKnownHosts no
 
+Host github.com
+    IdentitiesOnly yes
+    IdentityFile ${HOME}/.ssh/github
+
 Host raspberrypi.local
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
