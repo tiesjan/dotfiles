@@ -45,9 +45,6 @@ export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/.ansible-vault-password"
 GPG_TTY="$(tty)"
 export GPG_TTY
 
-# Configure Password Store
-export PASSWORD_STORE_DIR="${HOME}/Documents/secrets"
-
 # Configure pipx
 export USE_EMOJI="False"
 
