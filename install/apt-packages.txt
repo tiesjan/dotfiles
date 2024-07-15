@@ -5,6 +5,7 @@ dnsutils
 ffmpeg
 imagemagick
 jq
+poppler-utils
 renameutils
 ruby-full
 shellcheck
