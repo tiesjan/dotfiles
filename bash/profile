@@ -1,6 +1,10 @@
-# Add path for manually installed LV2 plugins
+# Add path for LV2 plugins
 LV2_PATH="${HOME}/Documents/LV2:$LV2_PATH"
 export LV2_PATH
+
+# Add path for VAMP plugins
+VAMP_PATH="${HOME}/Documents/VAMP:$VAMP_PATH"
+export VAMP_PATH
 
 # Configure QT platfom abstraction
 QT_QPA_PLATFORM="wayland"
