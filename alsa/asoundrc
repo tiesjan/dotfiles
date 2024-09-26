@@ -1,0 +1,9 @@
+# Map Xone:PX5 master channels 9 + 10 to recording channels 1 + 2
+pcm.XonePX5Master {
+  type plug
+
+  slave.pcm "hw:CARD=XONEPX5,DEV=0"
+
+  ttable.0.8 1
+  ttable.1.9 1
+}

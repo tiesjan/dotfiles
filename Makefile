@@ -3,6 +3,7 @@ SHELL := /bin/bash
 config: \
 	configure-abcde \
 	configure-ack \
+	configure-alsa \
 	configure-docker \
 	configure-ghci \
 	configure-git \
@@ -34,6 +35,10 @@ configure-abcde:
 configure-ack:
 	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
+
+configure-alsa:
+	# Configure ALSA
+	ln -f -s ${PWD}/alsa/asoundrc ${HOME}/.asoundrc
 
 configure-docker:
 	# Add current user to `docker` group
