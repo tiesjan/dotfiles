@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'dracula/vim', {'as': 'dracula'}
     Plug 'itchyny/lightline.vim'
     Plug 'preservim/nerdtree', {'on': 'NERDTree'}
-    Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 call plug#end()
 
 
@@ -109,16 +108,3 @@ let g:NERDTreeWinSize = 35
 """ Plugins - Vim REST Console
 let g:vrc_curl_opts = {'--include': '', '--silent': ''}
 let g:vrc_header_content_type = 'application/json; charset=utf-8'
-
-
-""" Plugins - YouCompleteMe
-let g:ycm_auto_hover = ''
-let g:ycm_complete_in_comments = 1
-let g:ycm_language_server = [
-  \   {
-  \     'name': 'haskell-language-server',
-  \     'cmdline': ['haskell-language-server-wrapper', '--lsp'],
-  \     'filetypes': ['haskell', 'lhaskell'],
-  \     'project_root_files': ['cabal.project', 'hie.yaml', 'stack.yaml', 'package.yaml'],
-  \   },
-  \ ]

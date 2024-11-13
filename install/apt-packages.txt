@@ -63,8 +63,3 @@ virt-manager
 
 # Requirement for Ansible (installed through pipx)
 sshpass
-
-# Requirements for YouCompleteMe (Vim plugin)
-build-essential
-cmake
-libpython3-dev
