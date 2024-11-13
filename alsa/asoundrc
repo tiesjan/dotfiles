@@ -1,0 +1,11 @@
+# Map DJ mixer's master output channels 9 + 10 to recording channels 1 + 2
+pcm.djmixer {
+  type plug
+
+  slave.pcm "hw:CARD=XONEPX5,DEV=0"
+
+  ttable.0.8 1
+  ttable.1.9 1
+
+  hint.description "DJ Mixer - Master Output"
+}
