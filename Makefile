@@ -12,6 +12,7 @@ config: \
 	configure-ideavim \
 	configure-libvirt \
 	configure-npm \
+	configure-pam-limits \
 	configure-pip \
 	configure-sqlite3 \
 	configure-ssh \
@@ -79,6 +80,13 @@ configure-libvirt:
 	# Add current user to `libvirt` group
 	getent group libvirt || sudo groupadd libvirt
 	sudo usermod --append --groups libvirt ${USER}
+
+configure-pam-limits:
+	# Set resource limits for `audio` group
+	sudo ln -f -s ${PWD}/pam_limits/audio.conf /etc/security/limits.d/95-audio.conf
+	# Add current user to `audio` group
+	getent group audio || sudo groupadd audio
+	sudo usermod --append --groups audio ${USER}
 
 configure-pip:
 	# Configure pip
