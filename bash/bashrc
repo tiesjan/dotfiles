@@ -14,9 +14,8 @@ if (command -v direnv > /dev/null); then
     eval "$(direnv hook bash)"
 fi
 
-# Set aliases for Nix
+# Set alias for running command in Nix environment
 if (command -v nix > /dev/null); then
-    alias ncg="nix-collect-garbage --delete-old"
     alias nrc="nix shell --file default.nix -c" "$@"
 fi
 
@@ -39,7 +38,9 @@ fi
 # Configure Ansible
 export ANSIBLE_CALLBACKS_ENABLED="profile_tasks"
 export ANSIBLE_RETRY_FILES_ENABLED="False"
-export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/.ansible-vault-password"
+if [ -f "${HOME}/.ansible-vault-password" ]; then
+    export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/.ansible-vault-password"
+fi
 
 # Configure GPG
 GPG_TTY="$(tty)"
