@@ -83,7 +83,7 @@ configure-libvirt:
 
 configure-pam-limits:
 	# Set resource limits for `audio` group
-	sudo ln -f -s ${PWD}/pam_limits/audio.conf /etc/security/limits.d/95-audio.conf
+	sudo cp ${PWD}/pam_limits/audio.conf /etc/security/limits.d/95-audio.conf
 	# Add current user to `audio` group
 	getent group audio || sudo groupadd audio
 	sudo usermod --append --groups audio ${USER}
