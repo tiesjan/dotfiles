@@ -15,6 +15,7 @@ config: \
 	configure-pip \
 	configure-sqlite3 \
 	configure-ssh \
+	configure-time \
 	configure-tmux \
 	configure-vagrant \
 	configure-vim \
@@ -104,6 +105,10 @@ configure-ssh:
 	mkdir -p ${HOME}/.ssh/
 	if [ ! -f ${HOME}/.ssh/config ]; then touch ${HOME}/.ssh/config; fi
 	grep --line-regexp --fixed-strings --quiet -- ${SSH_INCLUDE_LINE} ${HOME}/.ssh/config || printf '\n%s\n' ${SSH_INCLUDE_LINE} >> ${HOME}/.ssh/config
+
+configure-time:
+	# Configure system time to be UTC
+	sudo timedatectl set-local-rtc 0
 
 configure-tmux:
 	# Configure tmux
