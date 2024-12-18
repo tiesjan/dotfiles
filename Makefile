@@ -31,6 +31,8 @@ install: \
 configure-abcde:
 	# Configure abcde
 	ln -f -s ${PWD}/abcde/abcde.conf ${HOME}/.abcde.conf
+	# Link CDDB cache directory
+	ln -f -s --no-target-directory /music/CDDB ${HOME}/.cddb
 
 configure-ack:
 	# Configure Ack
