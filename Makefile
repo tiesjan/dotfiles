@@ -3,6 +3,7 @@ SHELL := /bin/bash
 config: \
 	configure-abcde \
 	configure-ack \
+	configure-bash \
 	configure-docker \
 	configure-ghci \
 	configure-git \
@@ -20,8 +21,6 @@ config: \
 	configure-vagrant \
 	configure-vim \
 	configure-vscode \
-	source-bashrc \
-	source-profile
 
 install: \
 	install-apt-packages \
@@ -38,6 +37,19 @@ configure-abcde:
 configure-ack:
 	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
+
+BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
+PROFILE_SOURCE_LINE=". ${PWD}/bash/profile"
+configure-bash:
+	# Source user definitions in .bashrc
+	if [ ! -f ${HOME}/.bashrc ]; then touch ${HOME}/.bashrc; fi
+	grep --line-regexp --fixed-strings --quiet -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || printf '\n%s\n' ${BASHRC_SOURCE_LINE} >> ${HOME}/.bashrc
+	# Source user definitions in .profile
+	if [ ! -f ${HOME}/.profile ]; then touch ${HOME}/.profile; fi
+	grep --line-regexp --fixed-strings --quiet -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || printf '\n%s\n' ${PROFILE_SOURCE_LINE} >> ${HOME}/.profile
+	# Install bash scripts
+	mkdir -p ${HOME}/.local/bin/
+	ln -f -s ${PWD}/bash/scripts/resample.bash ${HOME}/.local/bin/resample
 
 configure-docker:
 	# Add current user to `docker` group
@@ -129,18 +141,6 @@ configure-vscode:
 	# Configure VS Code
 	mkdir -p ${HOME}/.config/Code/User/
 	ln -f -s ${PWD}/vscode/settings.json ${HOME}/.config/Code/User/settings.json
-
-BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
-source-bashrc:
-	# Source user definitions in .bashrc
-	if [ ! -f ${HOME}/.bashrc ]; then touch ${HOME}/.bashrc; fi
-	grep --line-regexp --fixed-strings --quiet -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || printf '\n%s\n' ${BASHRC_SOURCE_LINE} >> ${HOME}/.bashrc
-
-PROFILE_SOURCE_LINE=". ${PWD}/bash/profile"
-source-profile:
-	# Source user definitions in .profile
-	if [ ! -f ${HOME}/.profile ]; then touch ${HOME}/.profile; fi
-	grep --line-regexp --fixed-strings --quiet -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || printf '\n%s\n' ${PROFILE_SOURCE_LINE} >> ${HOME}/.profile
 
 
 # Installation targets
