@@ -123,7 +123,7 @@ resample_dir () {
 
 print_usage () {
     printf "Usage: resample <FORMAT> <PATH>\n"
-    printf "  <FORMAT> is one of the supported output formats: aiff\n"
+    printf "  <FORMAT> is one of the supported output formats: aiff, flac\n"
     printf "  <PATH> is the path to a directory or a regular file\n"
 }
 
@@ -142,6 +142,12 @@ main () {
         "aiff")
             audio_format="${output_format}"
             audio_format_args="-write_id3v2 1"
+            file_extension="${output_format}"
+            ;;
+
+        "flac")
+            audio_format="${output_format}"
+            audio_format_args="-compression_level 12"
             file_extension="${output_format}"
             ;;
 
@@ -164,5 +170,6 @@ main () {
         bail "Given <PATH> is not a directory or a regular file: '${path}'"
     fi
 }
+
 
 main "$@"; exit
