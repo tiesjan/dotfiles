@@ -16,6 +16,7 @@ config: \
 	configure-pip \
 	configure-sqlite3 \
 	configure-ssh \
+	configure-sysctl \
 	configure-time \
 	configure-tmux \
 	configure-vagrant \
@@ -117,6 +118,10 @@ configure-ssh:
 	mkdir -p ${HOME}/.ssh/
 	if [ ! -f ${HOME}/.ssh/config ]; then touch ${HOME}/.ssh/config; fi
 	grep --line-regexp --fixed-strings --quiet -- ${SSH_INCLUDE_LINE} ${HOME}/.ssh/config || printf '\n%s\n' ${SSH_INCLUDE_LINE} >> ${HOME}/.ssh/config
+
+configure-sysctl:
+	# Configure sysctl settings
+	sudo cp ${PWD}/sysctl/local.conf /etc/sysctl.d/local.conf
 
 configure-time:
 	# Configure system time to be UTC
