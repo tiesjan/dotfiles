@@ -46,17 +46,8 @@ resample_file () {
     fi
 
     # Determine sample rate
-    if [ ${sample_rate} -ne 44100 ] && [ ${sample_rate} -ne 48000 ]; then
-        # Below 44.1kHz: upsample to 44.1kHz
-        if [ ${sample_rate} -lt 44100 ]; then
-            sample_rate=44100
-        # Between 44.1kHz and 48kHz: downsample to 44.1kHz
-        elif [ ${sample_rate} -gt 44100 ] && [ ${sample_rate} -lt 48000 ]; then
-            sample_rate=44100
-        # Above 48kHz: downsample to 48kHz
-        else
-            sample_rate=48000
-        fi
+    if [ ${sample_rate} -ne 44100 ]; then
+        sample_rate=44100
 
         needs_resampling=true
     fi
