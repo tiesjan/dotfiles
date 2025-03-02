@@ -1,8 +1,13 @@
 {
+    "editor.minimap.enabled": false,
+    "files.autoSave": "onWindowChange",
+    "files.trimTrailingWhitespace": true,
     "rust-analyzer.imports.granularity.enforce": true,
     "rust-analyzer.imports.granularity.group": "item",
+    "telemetry.telemetryLevel": "off",
     "vim.gdefault": true,
     "vim.hlsearch": true,
     "vim.joinspaces": false,
     "vim.useSystemClipboard": true,
+    "vim.vimrc.enable": true,
 }
