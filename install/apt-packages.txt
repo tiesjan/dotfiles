@@ -7,6 +7,9 @@ renameutils
 tree
 whois
 
+# Flatpak
+flatpak
+
 # GPG
 gpg
 pinentry-curses

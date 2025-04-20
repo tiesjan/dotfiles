@@ -4,6 +4,7 @@ config: \
 	configure-abcde \
 	configure-ack \
 	configure-bash \
+	configure-flatpak \
 	configure-git \
 	configure-gpg \
 	configure-ideavim \
@@ -42,6 +43,9 @@ configure-bash:
 	# Install bash scripts
 	mkdir -p ${HOME}/.local/bin/
 	ln -f -s ${PWD}/bash/scripts/resample.bash ${HOME}/.local/bin/resample
+
+configure-flatpak:
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 configure-git:
 	# Configure Git
