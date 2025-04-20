@@ -1,3 +1,0 @@
-install ansible==9.*
-  inject --include-apps ansible ansible-core==2.16.* ansible-lint
-install yamllint

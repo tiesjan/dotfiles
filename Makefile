@@ -4,16 +4,11 @@ config: \
 	configure-abcde \
 	configure-ack \
 	configure-bash \
-	configure-docker \
-	configure-ghci \
 	configure-git \
-	configure-gnome-desktop \
 	configure-gpg \
 	configure-ideavim \
 	configure-libvirt \
-	configure-npm \
 	configure-pam-limits \
-	configure-pip \
 	configure-sqlite3 \
 	configure-ssh \
 	configure-sysctl \
@@ -22,10 +17,6 @@ config: \
 	configure-vagrant \
 	configure-vim \
 	configure-vscode \
-
-install: \
-	install-apt-packages \
-	install-pipx-packages
 
 
 # Configuration targets
@@ -52,31 +43,10 @@ configure-bash:
 	mkdir -p ${HOME}/.local/bin/
 	ln -f -s ${PWD}/bash/scripts/resample.bash ${HOME}/.local/bin/resample
 
-configure-docker:
-	# Add current user to `docker` group
-	getent group docker || sudo groupadd docker
-	sudo usermod --append --groups docker ${USER}
-	# Configure UID/GID remapping namespace for current user
-	printf '{"userns-remap": "%s"}' "${USER}" | sudo tee /etc/docker/daemon.json
-
-configure-ghci:
-	# Configure GHCi
-	ln -f -s ${PWD}/ghci/ghci ${HOME}/.ghci
-	chmod 0600 ${HOME}/.ghci
-
 configure-git:
 	# Configure Git
 	ln -f -s ${PWD}/git/gitconfig ${HOME}/.gitconfig
 	ln -f -s ${PWD}/git/gitignore ${HOME}/.gitignore
-
-configure-gnome-desktop:
-	# Disable updates in GNOME Software
-	gsettings set org.gnome.software allow-updates false
-	gsettings set org.gnome.software download-updates false
-	gsettings set org.gnome.software download-updates-notify false
-	
-	# Ignore home directory in GNOME Tracker
-	if [ ! -f ${HOME}/.trackerignore ]; then touch ${HOME}/.trackerignore; fi
 
 configure-gpg:
 	# Configure GPG agent
@@ -98,15 +68,6 @@ configure-pam-limits:
 	# Add current user to `audio` group
 	getent group audio || sudo groupadd audio
 	sudo usermod --append --groups audio ${USER}
-
-configure-pip:
-	# Configure pip
-	mkdir -p ${HOME}/.config/pip/
-	ln -f -s ${PWD}/pip/pip.conf ${HOME}/.config/pip/pip.conf
-
-configure-npm:
-	# Configure NPM
-	ln -f -s ${PWD}/npm/npmrc ${HOME}/.npmrc
 
 configure-sqlite3:
 	# Configure SQLite3
@@ -151,6 +112,3 @@ configure-vscode:
 # Installation targets
 install-apt-packages:
 	xargs --arg-file=<(grep --invert-match "^#" install/apt-packages.txt) --no-run-if-empty -- sudo apt-get install --no-install-recommends --yes
-
-install-pipx-packages:
-	xargs --arg-file=install/pipx-commands.txt --max-lines=1 --no-run-if-empty -- pipx

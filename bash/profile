@@ -1,5 +1,1 @@
 # Configure QT platfom abstraction
-QT_QPA_PLATFORM="wayland"
-QT_QPA_PLATFORMTHEME="qt5ct"
-export QT_QPA_PLATFORM
-export QT_QPA_PLATFORMTHEME

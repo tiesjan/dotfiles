@@ -1,55 +1,42 @@
-# Tools
+# CLI tools
 ack
 curl
 dnsutils
-ffmpeg
-imagemagick
 jq
-poppler-utils
 renameutils
-ruby-full
-shellcheck
-sqlite3
 tree
-vim-gtk3
 whois
 
-# Tool: abcde
-abcde
-flac
-vorbis-tools
-
-# Tool: GPG
+# GPG
 gpg
 pinentry-curses
 
-# Tool: Node.js
-nodejs
-npm
+# Multimedia
+abcde
+ffmpeg
+flac
+imagemagick
+poppler-utils
+vorbis-tools
 
-# Tools: Python
+# Python
 pipx
 python3
-python3-pip
 python3-venv
 
-# Tool: tmux
+# Ruby
+ruby-full
+
+# SQLite
+sqlite3
+
+# tmux
 tmux
 tmux-plugin-manager
 
-
-# Archive files support
-p7zip-full
-
-# HEIC image viewing support
-heif-gdk-pixbuf
-
-# Pinyin input support
-ibus-libpinyin
-
-# Qt5 theming
-adwaita-qt
-qt5ct
+# Vim
+shellcheck
+vim-gtk3
 
 # Virtualization
 libvirt-daemon-system
@@ -61,5 +48,11 @@ vagrant-libvirt
 virt-manager
 
 
-# Requirement for Ansible (installed through pipx)
-sshpass
+# Archive files support
+p7zip-full
+
+# HEIC image viewing support
+heif-gdk-pixbuf
+
+# Pinyin input support
+ibus-libpinyin
