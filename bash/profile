@@ -1,1 +1,3 @@
 # Configure QT platfom abstraction
+QT_STYLE_OVERRIDE="kvantum"
+export QT_STYLE_OVERRIDE
