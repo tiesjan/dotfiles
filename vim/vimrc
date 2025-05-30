@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'dense-analysis/ale'
     Plug 'diepm/vim-rest-console', {'for': 'rest'}
-    Plug 'dracula/vim', {'as': 'dracula'}
+    Plug 'nordtheme/vim'
     Plug 'itchyny/lightline.vim'
     Plug 'preservim/nerdtree', {'on': 'NERDTree'}
 call plug#end()
@@ -35,7 +35,7 @@ augroup END
 
 
 """ General settings
-colorscheme dracula
+colorscheme nord
 set autochdir
 set autoindent
 set background=dark
@@ -94,7 +94,7 @@ let g:gitgutter_sign_removed_first_line = "\u2580"
 
 
 """ Plugins - Lightline
-let g:lightline = {'colorscheme': 'dracula'}
+let g:lightline = {'colorscheme': 'nord'}
 
 
 """ Plugins - NERDTree
