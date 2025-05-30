@@ -1,4 +1,4 @@
-SHELL = /bin/bash
+SHELL = /bin/zsh
 
 PLATFORM := $(shell uname -s)
 
@@ -23,13 +23,14 @@ config: \
 	configure-pam-limits \
 	configure-sysctl \
 	configure-timedatectl \
-	configure-vagrant
+	configure-vagrant \
+	configure-zsh
 
 endif
 
 config-common: \
 	configure-abcde \
-	configure-bash \
+	configure-bash-scripts \
 	configure-ack \
 	configure-git \
 	configure-gnupg \
@@ -52,15 +53,7 @@ configure-ack:
 	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
 
-BASHRC_SOURCE_LINE=". ${PWD}/bash/bashrc"
-PROFILE_SOURCE_LINE=". ${PWD}/bash/profile"
-configure-bash:
-	# Source user definitions in .bashrc
-	if [ ! -f ${HOME}/.bashrc ]; then touch ${HOME}/.bashrc; fi
-	grep --line-regexp --fixed-strings --quiet -- ${BASHRC_SOURCE_LINE} ${HOME}/.bashrc || printf '\n%s\n' ${BASHRC_SOURCE_LINE} >> ${HOME}/.bashrc
-	# Source user definitions in .profile
-	if [ ! -f ${HOME}/.profile ]; then touch ${HOME}/.profile; fi
-	grep --line-regexp --fixed-strings --quiet -- ${PROFILE_SOURCE_LINE} ${HOME}/.profile || printf '\n%s\n' ${PROFILE_SOURCE_LINE} >> ${HOME}/.profile
+configure-bash-scripts:
 	# Install bash scripts
 	sudo mkdir -p /usr/local/bin/
 	sudo ln -f -s ${PWD}/bash/scripts/resample.bash /usr/local/bin/resample
@@ -148,6 +141,11 @@ configure-vscode:
 	ln -f -s ${PWD}/vscode/settings.json "${VSCODE_CONFIG_DIR}/settings.json"
 	# Disable key press and hold for VSCode under MacOS
 	if [[ "${PLATFORM}" = "Darwin" ]]; then defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false; fi
+
+configure-zsh:
+	# Configure zsh
+	ln -f -s ${PWD}/zsh/zprofile ${HOME}/.zprofile
+	ln -f -s ${PWD}/zsh/zshrc ${HOME}/.zshrc
 
 
 # Installation targets

@@ -64,6 +64,9 @@ vagrant
 vagrant-libvirt
 virt-manager
 
+# Zsh
+zsh
+
 
 # Archive files support
 p7zip-full

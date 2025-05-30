@@ -1,0 +1,4 @@
+# Configure QT platform style under Linux
+if [[ "$(uname -s)" = "Linux" ]]; then
+    export QT_STYLE_OVERRIDE="kvantum"
+fi

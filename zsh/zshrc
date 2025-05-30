@@ -1,17 +1,22 @@
-# Disable software flow control
-stty -ixon
+# Initialize built-in completion
+autoload -Uz compinit
+compinit
+
+# Initialize Oh My Zsh
+export ZSH="${HOME}/.oh-my-zsh"
+source ${ZSH}/oh-my-zsh.sh
 
 # Set default visual editor
 export VISUAL="vim"
 
-# Prefix Bash prompt if started inside Vim
+# Prefix shell prompt if started inside Vim
 if [ -v VIM ]; then
-    PS1="[vim] $PS1"
+    PS1="[vim] ${PS1}"
 fi
 
-# Add Bash hook to enable direnv
+# Add shell hook to enable direnv
 if (command -v direnv > /dev/null); then
-    eval "$(direnv hook bash)"
+    eval "$(direnv hook zsh)"
 fi
 
 # Set alias for running command in Nix environment
@@ -19,10 +24,10 @@ if (command -v nix > /dev/null); then
     alias nrc="nix shell --file default.nix -c" "$@"
 fi
 
-# Bash completions for cargo and rustup
+# Shell completions for cargo and rustup
 if (command -v rustup > /dev/null); then
-    eval "$(rustup completions bash cargo)"
-    eval "$(rustup completions bash rustup)"
+    eval "$(rustup completions zsh cargo)"
+    eval "$(rustup completions zsh rustup)"
 fi
 
 # Set alias for bulk renaming files using qmv
@@ -38,8 +43,7 @@ if [ -f "${HOME}/.ansible-vault-password" ]; then
 fi
 
 # Configure GPG
-GPG_TTY="$(tty)"
-export GPG_TTY
+export GPG_TTY="$(tty)"
 
 # Configure pytest
 export PYTEST_ADDOPTS="-vv"
