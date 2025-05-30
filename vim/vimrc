@@ -39,7 +39,7 @@ colorscheme dracula
 set autochdir
 set autoindent
 set background=dark
-set clipboard^=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set colorcolumn=+1
 set completeopt=menu
 set cursorline

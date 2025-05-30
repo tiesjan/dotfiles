@@ -4,5 +4,8 @@
 # IntelliJ IDEA
 .idea/
 
+# MacOS
+.DS_Store
+
 # Vim
 *.sw[op]
