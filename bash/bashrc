@@ -25,11 +25,6 @@ if (command -v rustup > /dev/null); then
     eval "$(rustup completions bash rustup)"
 fi
 
-# Bash completions for pipx
-if (command -v pipx > /dev/null); then
-    eval "$(register-python-argcomplete pipx)"
-fi
-
 # Set alias for bulk renaming files using qmv
 if (command -v qmv > /dev/null); then
     alias bulk-rename="qmv --format=destination-only" "$@"
@@ -45,9 +40,6 @@ fi
 # Configure GPG
 GPG_TTY="$(tty)"
 export GPG_TTY
-
-# Configure pipx
-export USE_EMOJI="False"
 
 # Configure pytest
 export PYTEST_ADDOPTS="-vv"

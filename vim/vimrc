@@ -22,7 +22,7 @@ augroup Autocommands
     autocmd FileType nerdtree setlocal signcolumn=no
 
     "override filetype based on file names
-    autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
+    autocmd BufNewFile,BufRead Brewfile,Vagrantfile set filetype=ruby
 
     if !(&diff || has('gui_running'))
         "open NERDTree on startup and switch cursor to buffer on the right

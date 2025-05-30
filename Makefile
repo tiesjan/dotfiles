@@ -144,3 +144,6 @@ configure-vscode:
 # Installation targets
 install-apt-packages:
 	xargs --arg-file=<(grep --invert-match "^#" install/apt-packages.txt) --no-run-if-empty -- sudo apt-get install --no-install-recommends --yes
+
+install-brew-packages:
+	brew bundle install --file=install/Brewfile

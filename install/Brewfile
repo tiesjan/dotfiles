@@ -1,0 +1,34 @@
+# CLI tools
+brew "ack"
+brew "bind"
+brew "jq"
+brew "renameutils"
+brew "tree"
+brew "watch"
+
+# GPG
+brew "gnupg"
+brew "pinentry"
+
+# Git
+brew "git"
+brew "git-delta"
+
+# Java
+brew "maven"
+brew "openjdk"
+
+# Multimedia
+brew "abcde"
+brew "ffmpeg"
+brew "imagemagick"
+
+# Python
+brew "python"
+
+# tmux
+brew "tmux"
+
+# Vim
+brew "shellcheck"
+brew "vim"

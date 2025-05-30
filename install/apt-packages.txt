@@ -8,7 +8,6 @@ dnsutils
 jq
 renameutils
 tree
-whois
 
 # Flatpak
 flatpak
@@ -29,16 +28,12 @@ maven
 # Multimedia
 abcde
 ffmpeg
-flac
 imagemagick
 poppler-utils
 spek
-vorbis-tools
 
 # Python
-pipx
 python3
-python3-venv
 
 # Ruby
 ruby-full
@@ -49,6 +44,9 @@ sqlite3
 # tmux
 tmux
 tmux-plugin-manager
+
+# System tools
+bleachbit
 
 # Vim
 shellcheck
