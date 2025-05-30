@@ -102,7 +102,7 @@ let g:NERDTreeDirArrowCollapsible = "\u2212"
 let g:NERDTreeDirArrowExpandable = "\u002B"
 let g:NERDTreeMinimalMenu = 1
 let g:NERDTreeRespectWildIgnore = 1
-let g:NERDTreeWinSize = 35
+let g:NERDTreeWinSize = 32
 
 
 """ Plugins - Vim REST Console

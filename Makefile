@@ -3,6 +3,7 @@ SHELL = /bin/bash
 PLATFORM := $(shell uname -s)
 
 ifeq ("${PLATFORM}", "Darwin")
+KITTY_OS = macos
 STACK_DIR = /Volumes/STACK
 VSCODE_CONFIG_DIR := ${HOME}/Library/Application Support/Code/User
 
@@ -11,6 +12,7 @@ config: \
 	configure-desktop-macos
 
 else ifeq ("${PLATFORM}", "Linux")
+KITTY_OS = linux
 STACK_DIR := ${HOME}/STACK
 VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 
@@ -31,6 +33,7 @@ config-common: \
 	configure-ack \
 	configure-git \
 	configure-gnupg \
+	configure-kitty \
 	configure-sqlite3 \
 	configure-ssh \
 	configure-tmux \
@@ -86,6 +89,12 @@ configure-gnupg:
 configure-ideavim:
 	# Configure IdeaVim
 	ln -f -s ${PWD}/ideavim/ideavimrc ${HOME}/.ideavimrc
+
+configure-kitty:
+	# Configure kitty terminal
+	mkdir -p ${HOME}/.config/kitty/
+	ln -f -s ${PWD}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
+	ln -f -s ${PWD}/kitty/kitty-${KITTY_OS}.conf ${HOME}/.config/kitty/kitty-${KITTY_OS}.conf
 
 configure-libvirt:
 	# Add current user to `libvirt` group

@@ -25,6 +25,9 @@ default-jdk
 default-jre
 maven
 
+# Kitty
+kitty
+
 # Multimedia
 abcde
 ffmpeg
