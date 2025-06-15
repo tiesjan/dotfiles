@@ -66,6 +66,9 @@
 [rebase]
 	autoSquash = true
 
+[tag]
+	gpgSign = true
+
 [user]
 	name = Ties Jan Hefting
 	email = hello@tiesjan.com
