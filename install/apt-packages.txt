@@ -12,6 +12,9 @@ tree
 # Flatpak
 flatpak
 
+# Gnome
+gnome-shell-extension-prefs
+
 # GPG
 gpg
 pinentry-curses
@@ -33,7 +36,7 @@ abcde
 ffmpeg
 imagemagick
 poppler-utils
-spek
+vobcopy
 
 # Python
 python3
