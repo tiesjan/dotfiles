@@ -18,6 +18,7 @@ VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 
 config: \
 	config-common \
+	configure-apt \
 	configure-flatpak \
 	configure-libvirt \
 	configure-pam-limits \
@@ -52,6 +53,10 @@ configure-abcde:
 configure-ack:
 	# Configure Ack
 	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
+
+configure-apt:
+	# Configure APT
+	sudo ln -f -s ${PWD}/apt/local /etc/apt/apt.conf.d/99local
 
 configure-bash-scripts:
 	# Install bash scripts
