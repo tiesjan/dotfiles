@@ -38,6 +38,10 @@ imagemagick
 poppler-utils
 vobcopy
 
+# Node.js
+nodejs
+npm
+
 # Python
 python3
 

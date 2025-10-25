@@ -23,6 +23,9 @@ brew "abcde"
 brew "ffmpeg"
 brew "imagemagick"
 
+# Node.js
+brew "node"
+
 # Python
 brew "python"
 
