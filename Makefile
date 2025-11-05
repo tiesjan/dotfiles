@@ -19,6 +19,7 @@ VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 config: \
 	config-common \
 	configure-apt \
+	configure-desktop-gnome \
 	configure-flatpak \
 	configure-libvirt \
 	configure-pam-limits \
@@ -62,6 +63,12 @@ configure-bash-scripts:
 	# Install bash scripts
 	sudo mkdir -p /usr/local/bin/
 	sudo ln -f -s ${PWD}/bash/scripts/resample.bash /usr/local/bin/resample
+
+configure-desktop-gnome:
+	# Disable updates in GNOME Software
+	gsettings set org.gnome.software allow-updates false
+	gsettings set org.gnome.software download-updates false
+	gsettings set org.gnome.software download-updates-notify false
 
 configure-desktop-macos:
 	# Set delay for hot corners
