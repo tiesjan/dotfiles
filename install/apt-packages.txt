@@ -33,11 +33,11 @@ kitty
 
 # Multimedia
 abcde
+dvdbackup
 ffmpeg
 flac
 imagemagick
 poppler-utils
-vobcopy
 
 # Node.js
 nodejs
