@@ -3,8 +3,8 @@ SHELL = /bin/zsh
 PLATFORM := $(shell uname -s)
 
 ifeq ("${PLATFORM}", "Darwin")
+CLOUD_DIR = /Volumes/Cloud
 KITTY_OS = macos
-STACK_DIR = /Volumes/STACK
 VSCODE_CONFIG_DIR := ${HOME}/Library/Application Support/Code/User
 
 config: \
@@ -12,8 +12,8 @@ config: \
 	configure-desktop-macos
 
 else ifeq ("${PLATFORM}", "Linux")
+CLOUD_DIR := ${HOME}/Cloud
 KITTY_OS = linux
-STACK_DIR := ${HOME}/STACK
 VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 
 config: \
@@ -49,7 +49,7 @@ configure-abcde:
 	# Configure abcde
 	ln -f -s ${PWD}/abcde/abcde.conf ${HOME}/.abcde.conf
 	# Link CDDB cache directory
-	if [[ ! -h ${HOME}/.cddb ]]; then ln -f -s ${STACK_DIR}/Music/CDDB ${HOME}/.cddb; fi
+	if [[ ! -h ${HOME}/.cddb ]]; then ln -f -s ${CLOUD_DIR}/Music/CDDB ${HOME}/.cddb; fi
 
 configure-ack:
 	# Configure Ack
