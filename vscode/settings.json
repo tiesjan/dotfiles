@@ -1,9 +1,11 @@
 {
+    "chat.agent.enabled": false,
     "editor.minimap.enabled": false,
     "files.autoSave": "onWindowChange",
     "files.trimTrailingWhitespace": true,
     "rust-analyzer.imports.granularity.enforce": true,
     "rust-analyzer.imports.granularity.group": "item",
+    "telemetry.feedback.enabled": false,
     "telemetry.telemetryLevel": "off",
     "vim.gdefault": true,
     "vim.hlsearch": true,
