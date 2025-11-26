@@ -32,11 +32,11 @@ endif
 
 config-common: \
 	configure-abcde \
-	configure-bash-scripts \
 	configure-ack \
 	configure-git \
 	configure-gnupg \
 	configure-kitty \
+	configure-scripts \
 	configure-sqlite3 \
 	configure-ssh \
 	configure-tmux \
@@ -58,11 +58,6 @@ configure-ack:
 configure-apt:
 	# Configure APT
 	sudo ln -f -s ${PWD}/apt/local /etc/apt/apt.conf.d/99local
-
-configure-bash-scripts:
-	# Install bash scripts
-	sudo mkdir -p /usr/local/bin/
-	sudo ln -f -s ${PWD}/bash/scripts/resample.bash /usr/local/bin/resample
 
 configure-desktop-gnome:
 	# Disable updates in GNOME Software
@@ -112,6 +107,11 @@ configure-pam-limits:
 	# Add current user to `audio` group
 	getent group audio || sudo groupadd audio
 	sudo usermod --append --groups audio ${USER}
+
+configure-scripts:
+	# Link dash scripts
+	sudo mkdir -p /usr/local/bin/
+	sudo ln -f -s ${PWD}/scripts/resample.sh /usr/local/bin/resample
 
 configure-sqlite3:
 	# Configure SQLite3

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 
 ORIGINAL_FILENAME_PREFIX="ORIGINAL_"
 RESAMPLING_FILENAME_PREFIX="RESAMPLING_"
@@ -32,9 +32,9 @@ resample_file () {
         return
     fi
 
-    stream_info=$(jq '.streams[] | select(.codec_type == "audio")' <<< "${file_info}")
-    sample_format=$(jq --raw-output '.sample_fmt' <<< "${stream_info}")
-    sample_rate=$(( $(jq --raw-output '.sample_rate | tonumber' <<< "${stream_info}") ))
+    stream_info=$(printf "%s" "${file_info}" | jq '.streams[] | select(.codec_type == "audio")')
+    sample_format=$(printf "%s" "${stream_info}" | jq --raw-output '.sample_fmt')
+    sample_rate=$(( $(printf "%s" "${stream_info}" | jq --raw-output '.sample_rate | tonumber') ))
 
     needs_resampling=false
 
