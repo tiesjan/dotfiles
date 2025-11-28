@@ -12,4 +12,5 @@
     "vim.joinspaces": false,
     "vim.useSystemClipboard": true,
     "vim.vimrc.enable": true,
+    "workbench.externalBrowser": "firefox",
 }
