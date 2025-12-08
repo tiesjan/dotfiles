@@ -55,7 +55,7 @@ resample_file () {
     if [ "${force_resampling}" = false ]
     then
         # Quit early if the output sample format and sample rate match the input file
-        if [ "${sample_format}" = "${OUTPUT_SAMPLE_FORMAT}" ] || [ "${sample_rate}" -eq ${OUTPUT_SAMPLE_RATE} ]
+        if [ "${sample_format}" = "${OUTPUT_SAMPLE_FORMAT}" ] && [ "${sample_rate}" -eq ${OUTPUT_SAMPLE_RATE} ]
         then
             printf "Skipping %s\n" "${file_path}"
             return
