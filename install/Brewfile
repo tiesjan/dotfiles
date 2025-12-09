@@ -1,3 +1,7 @@
+# Taps
+tap "tiesjan/extra"
+
+
 # CLI tools
 brew "ack"
 brew "bind"
@@ -23,6 +27,7 @@ brew "abcde"
 brew "dvdbackup"
 brew "ffmpeg"
 brew "imagemagick"
+brew "tiesjan/extra/cd-discid"
 
 # Node.js
 brew "node"
