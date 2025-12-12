@@ -43,6 +43,7 @@ config-common: \
 	configure-ack \
 	configure-git \
 	configure-gnupg \
+	configure-ideavim \
 	configure-kitty \
 	configure-sqlite3 \
 	configure-ssh \
