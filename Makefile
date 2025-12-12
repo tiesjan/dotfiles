@@ -11,6 +11,10 @@ config: \
 	config-common \
 	configure-desktop-macos
 
+install: \
+	install-brew-packages \
+	install-scripts
+
 else ifeq ("${PLATFORM}", "Linux")
 CLOUD_DIR := ${HOME}/Cloud
 KITTY_OS = linux
@@ -28,6 +32,10 @@ config: \
 	configure-vagrant \
 	configure-zsh
 
+install: \
+	install-apt-packages \
+	install-scripts
+
 endif
 
 config-common: \
@@ -36,7 +44,6 @@ config-common: \
 	configure-git \
 	configure-gnupg \
 	configure-kitty \
-	configure-scripts \
 	configure-sqlite3 \
 	configure-ssh \
 	configure-tmux \
@@ -108,11 +115,6 @@ configure-pam-limits:
 	getent group audio || sudo groupadd audio
 	sudo usermod --append --groups audio ${USER}
 
-configure-scripts:
-	# Link dash scripts
-	sudo mkdir -p /usr/local/bin/
-	sudo ln -f -s ${PWD}/scripts/resample.sh /usr/local/bin/resample
-
 configure-sqlite3:
 	# Configure SQLite3
 	ln -f -s ${PWD}/config/sqlite3/sqliterc ${HOME}/.sqliterc
@@ -162,7 +164,14 @@ configure-zsh:
 
 # Installation targets
 install-apt-packages:
+	# Install APT packages
 	xargs --arg-file=<(grep --invert-match "^#" install/apt-packages.txt) --no-run-if-empty -- sudo apt-get install --no-install-recommends --yes
 
 install-brew-packages:
+	# Install Brew packages
 	brew bundle install --file=install/Brewfile
+
+install-scripts:
+	# Link dash scripts
+	sudo mkdir -p /usr/local/bin/
+	sudo ln -f -s ${PWD}/scripts/resample.sh /usr/local/bin/resample
