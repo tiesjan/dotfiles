@@ -47,17 +47,17 @@ config-common: \
 # Configuration targets
 configure-abcde:
 	# Configure abcde
-	ln -f -s ${PWD}/abcde/abcde.conf ${HOME}/.abcde.conf
+	ln -f -s ${PWD}/config/abcde/abcde.conf ${HOME}/.abcde.conf
 	# Link CDDB cache directory
 	if [[ ! -h ${HOME}/.cddb ]]; then ln -f -s ${CLOUD_DIR}/Music/CDDB ${HOME}/.cddb; fi
 
 configure-ack:
 	# Configure Ack
-	ln -f -s ${PWD}/ack/ackrc ${HOME}/.ackrc
+	ln -f -s ${PWD}/config/ack/ackrc ${HOME}/.ackrc
 
 configure-apt:
 	# Configure APT
-	sudo ln -f -s ${PWD}/apt/local /etc/apt/apt.conf.d/99local
+	sudo ln -f -s ${PWD}/config/apt/local /etc/apt/apt.conf.d/99local
 
 configure-desktop-gnome:
 	# Disable updates in GNOME Software
@@ -75,26 +75,26 @@ configure-flatpak:
 
 configure-git:
 	# Configure Git
-	ln -f -s ${PWD}/git/gitconfig ${HOME}/.gitconfig
-	ln -f -s ${PWD}/git/gitignore ${HOME}/.gitignore
+	ln -f -s ${PWD}/config/git/gitconfig ${HOME}/.gitconfig
+	ln -f -s ${PWD}/config/git/gitignore ${HOME}/.gitignore
 
 configure-gnupg:
 	# Install pinentry-auto script
 	sudo mkdir -p /usr/local/bin/
-	sudo ln -f -s ${PWD}/gnupg/pinentry-auto.sh /usr/local/bin/pinentry-auto
+	sudo ln -f -s ${PWD}/config/gnupg/pinentry-auto.sh /usr/local/bin/pinentry-auto
 	# Configure GnuPG agent
 	mkdir -p ${HOME}/.gnupg/
-	ln -f -s ${PWD}/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
+	ln -f -s ${PWD}/config/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
 
 configure-ideavim:
 	# Configure IdeaVim
-	ln -f -s ${PWD}/ideavim/ideavimrc ${HOME}/.ideavimrc
+	ln -f -s ${PWD}/config/ideavim/ideavimrc ${HOME}/.ideavimrc
 
 configure-kitty:
 	# Configure kitty terminal
 	mkdir -p ${HOME}/.config/kitty/
-	ln -f -s ${PWD}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
-	ln -f -s ${PWD}/kitty/kitty-${KITTY_OS}.conf ${HOME}/.config/kitty/kitty-${KITTY_OS}.conf
+	ln -f -s ${PWD}/config/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
+	ln -f -s ${PWD}/config/kitty/kitty-${KITTY_OS}.conf ${HOME}/.config/kitty/kitty-${KITTY_OS}.conf
 
 configure-libvirt:
 	# Add current user to `libvirt` group
@@ -103,7 +103,7 @@ configure-libvirt:
 
 configure-pam-limits:
 	# Set resource limits for `audio` group
-	sudo cp ${PWD}/pam_limits/audio.conf /etc/security/limits.d/95-audio.conf
+	sudo cp ${PWD}/config/pam_limits/audio.conf /etc/security/limits.d/95-audio.conf
 	# Add current user to `audio` group
 	getent group audio || sudo groupadd audio
 	sudo usermod --append --groups audio ${USER}
@@ -115,9 +115,9 @@ configure-scripts:
 
 configure-sqlite3:
 	# Configure SQLite3
-	ln -f -s ${PWD}/sqlite3/sqliterc ${HOME}/.sqliterc
+	ln -f -s ${PWD}/config/sqlite3/sqliterc ${HOME}/.sqliterc
 
-SSH_INCLUDE_LINE := "Include ${PWD}/ssh/config"
+SSH_INCLUDE_LINE := "Include ${PWD}/config/ssh/config"
 configure-ssh:
 	# Configure SSH
 	mkdir -p ${HOME}/.ssh/
@@ -126,7 +126,7 @@ configure-ssh:
 
 configure-sysctl:
 	# Configure sysctl settings
-	sudo cp ${PWD}/sysctl/local.conf /etc/sysctl.d/local.conf
+	sudo cp ${PWD}/config/sysctl/local.conf /etc/sysctl.d/local.conf
 
 configure-timedatectl:
 	# Configure system time to be UTC
@@ -134,30 +134,30 @@ configure-timedatectl:
 
 configure-tmux:
 	# Configure tmux
-	ln -f -s ${PWD}/tmux/tmux.conf ${HOME}/.tmux.conf
+	ln -f -s ${PWD}/config/tmux/tmux.conf ${HOME}/.tmux.conf
 
 configure-vagrant:
 	# Configure sudoers for Vagrant
 	getent group vagrant || sudo groupadd vagrant
 	sudo usermod --append --groups vagrant ${USER}
-	sudo cp ${PWD}/vagrant/sudoers /etc/sudoers.d/vagrant
+	sudo cp ${PWD}/config/vagrant/sudoers /etc/sudoers.d/vagrant
 	sudo chown root:root /etc/sudoers.d/vagrant
 
 configure-vim:
 	# Configure Vim
-	ln -f -s ${PWD}/vim/vimrc ${HOME}/.vimrc
+	ln -f -s ${PWD}/config/vim/vimrc ${HOME}/.vimrc
 
 configure-vscode:
 	# Configure VS Code
 	mkdir -p "${VSCODE_CONFIG_DIR}"
-	ln -f -s ${PWD}/vscode/settings.json "${VSCODE_CONFIG_DIR}/settings.json"
+	ln -f -s ${PWD}/config/vscode/settings.json "${VSCODE_CONFIG_DIR}/settings.json"
 	# Disable key press and hold for VSCode under MacOS
 	if [[ "${PLATFORM}" = "Darwin" ]]; then defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false; fi
 
 configure-zsh:
 	# Configure zsh
-	ln -f -s ${PWD}/zsh/zprofile ${HOME}/.zprofile
-	ln -f -s ${PWD}/zsh/zshrc ${HOME}/.zshrc
+	ln -f -s ${PWD}/config/zsh/zprofile ${HOME}/.zprofile
+	ln -f -s ${PWD}/config/zsh/zshrc ${HOME}/.zshrc
 
 
 # Installation targets
