@@ -29,8 +29,7 @@ config: \
 	configure-pam-limits \
 	configure-sysctl \
 	configure-timedatectl \
-	configure-vagrant \
-	configure-zsh
+	configure-vagrant
 
 install: \
 	install-apt-packages \
@@ -49,7 +48,8 @@ config-common: \
 	configure-ssh \
 	configure-tmux \
 	configure-vim \
-	configure-vscode
+	configure-vscode \
+	configure-zsh
 
 
 # Configuration targets
