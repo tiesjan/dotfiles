@@ -166,7 +166,7 @@ configure-zsh:
 # Installation targets
 install-apt-packages:
 	# Install APT packages
-	xargs --arg-file=<(grep --invert-match "^#" install/apt-packages.txt) --no-run-if-empty -- sudo apt-get install --no-install-recommends --yes
+	xargs --arg-file=<(grep --invert-match "^#" install/apt-packages.txt) --no-run-if-empty -- sudo apt-get install --yes
 
 install-brew-packages:
 	# Install Brew packages
