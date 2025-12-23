@@ -41,7 +41,6 @@ config-common: \
 	configure-abcde \
 	configure-ack \
 	configure-git \
-	configure-gnupg \
 	configure-ideavim \
 	configure-kitty \
 	configure-sqlite3 \
@@ -85,14 +84,6 @@ configure-git:
 	# Configure Git
 	ln -f -s ${PWD}/config/git/gitconfig ${HOME}/.gitconfig
 	ln -f -s ${PWD}/config/git/gitignore ${HOME}/.gitignore
-
-configure-gnupg:
-	# Install pinentry-auto script
-	sudo mkdir -p /usr/local/bin/
-	sudo ln -f -s ${PWD}/config/gnupg/pinentry-auto.sh /usr/local/bin/pinentry-auto
-	# Configure GnuPG agent
-	mkdir -p ${HOME}/.gnupg/
-	ln -f -s ${PWD}/config/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
 
 configure-ideavim:
 	# Configure IdeaVim

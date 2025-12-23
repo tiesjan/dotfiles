@@ -10,10 +10,6 @@ brew "renameutils"
 brew "tree"
 brew "watch"
 
-# GPG
-brew "gnupg"
-brew "pinentry"
-
 # Git
 brew "git"
 brew "git-delta"

@@ -50,9 +50,6 @@ if [[ -f "${HOME}/.ansible-vault-password" ]]; then
     export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/.ansible-vault-password"
 fi
 
-# Configure GPG
-export GPG_TTY="$(tty)"
-
 # Configure Homebrew
 if (command -v /opt/homebrew/bin/brew > /dev/null); then
     export HOMEBREW_NO_ANALYTICS=1

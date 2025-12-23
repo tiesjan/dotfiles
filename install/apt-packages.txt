@@ -15,10 +15,6 @@ flatpak
 # Gnome
 gnome-shell-extension-prefs
 
-# GPG
-gpg
-pinentry-curses
-
 # Git
 git
 git-delta
