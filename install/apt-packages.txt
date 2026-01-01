@@ -1,10 +1,10 @@
 # Build tools
-make
+build-essential
 
 # CLI tools
 ack
 curl
-dnsutils
+bind9-dnsutils
 jq
 renameutils
 tree
