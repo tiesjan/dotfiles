@@ -3,7 +3,6 @@ SHELL = /bin/zsh
 PLATFORM := $(shell uname -s)
 
 ifeq ("${PLATFORM}", "Darwin")
-CLOUD_DIR = /Volumes/Cloud
 KITTY_OS = macos
 VSCODE_CONFIG_DIR := ${HOME}/Library/Application Support/Code/User
 
@@ -16,12 +15,12 @@ install: \
 	install-scripts
 
 else ifeq ("${PLATFORM}", "Linux")
-CLOUD_DIR := ${HOME}/Cloud
 KITTY_OS = linux
 VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 
 config: \
 	config-common \
+	configure-abcde \
 	configure-apt \
 	configure-desktop-gnome \
 	configure-flatpak \
@@ -38,7 +37,6 @@ install: \
 endif
 
 config-common: \
-	configure-abcde \
 	configure-ack \
 	configure-git \
 	configure-ideavim \
@@ -55,8 +53,6 @@ config-common: \
 configure-abcde:
 	# Configure abcde
 	ln -f -s ${PWD}/config/abcde/abcde.conf ${HOME}/.abcde.conf
-	# Link CDDB cache directory
-	if [[ ! -h ${HOME}/.cddb ]]; then ln -f -s ${CLOUD_DIR}/Music/CDDB ${HOME}/.cddb; fi
 
 configure-ack:
 	# Configure Ack
