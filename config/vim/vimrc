@@ -67,6 +67,8 @@ set wildmenu
 let mapleader = '\'
 " remove trailing whitespace
 nnoremap <leader>rtw :%s/\s\+$//e<CR>
+" find irregularities in CDDB entry
+nnoremap <leader>cddb /\(\s[^A-Z0-9/()"'&]\)\\|[‘’“”]\\|DYEAR=.\+<CR>
 " switch between windows
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
