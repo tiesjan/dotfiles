@@ -15,7 +15,6 @@ brew "maven"
 brew "openjdk"
 
 # Multimedia
-brew "dvdbackup"
 brew "ffmpeg"
 brew "imagemagick"
 

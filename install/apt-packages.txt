@@ -33,6 +33,7 @@ dvdbackup
 ffmpeg
 flac
 imagemagick
+lsdvd
 poppler-utils
 
 # Node.js
