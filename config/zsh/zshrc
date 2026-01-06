@@ -31,6 +31,12 @@ if (command -v direnv > /dev/null); then
     eval "$(direnv hook zsh)"
 fi
 
+# Set alias for finding files in root while ignoring certain MacOS specific directories
+if [[ "$(uname -s)" = "Darwin" ]]; then
+    FIND_IN_ROOT_IGNORE="^(/System/Volumes|/Volumes/Time Machine)"
+    alias find-in-root="find -E / -regex \"${FIND_IN_ROOT_IGNORE}\" -prune -false -or $@"
+fi
+
 # Set alias for running command in Nix environment
 if (command -v nix > /dev/null); then
     alias nrc="nix shell --file default.nix -c" "$@"
