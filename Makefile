@@ -3,7 +3,6 @@ SHELL = /bin/zsh
 PLATFORM := $(shell uname -s)
 
 ifeq ("${PLATFORM}", "Darwin")
-KITTY_OS = macos
 VSCODE_CONFIG_DIR := ${HOME}/Library/Application Support/Code/User
 
 config: \
@@ -15,7 +14,6 @@ install: \
 	install-scripts
 
 else ifeq ("${PLATFORM}", "Linux")
-KITTY_OS = linux
 VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 
 config: \
@@ -40,7 +38,6 @@ config-common: \
 	configure-ack \
 	configure-git \
 	configure-ideavim \
-	configure-kitty \
 	configure-sqlite3 \
 	configure-ssh \
 	configure-tmux \
@@ -84,12 +81,6 @@ configure-git:
 configure-ideavim:
 	# Configure IdeaVim
 	ln -f -s ${PWD}/config/ideavim/ideavimrc ${HOME}/.ideavimrc
-
-configure-kitty:
-	# Configure kitty terminal
-	mkdir -p ${HOME}/.config/kitty/
-	ln -f -s ${PWD}/config/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
-	ln -f -s ${PWD}/config/kitty/kitty-${KITTY_OS}.conf ${HOME}/.config/kitty/kitty-${KITTY_OS}.conf
 
 configure-libvirt:
 	# Add current user to `libvirt` group

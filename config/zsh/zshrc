@@ -47,11 +47,6 @@ if (command -v qmv > /dev/null); then
     alias bulk-rename="qmv --format=destination-only" "$@"
 fi
 
-# Set alias to make use of SSH kitten when invoked from the Kitty terminal
-if [[ "${TERM}" = "xterm-kitty" ]]; then
-    alias ssh="kitty +kitten ssh"
-fi
-
 # Set alias for default tmux session name
 if (command -v tmux > /dev/null); then
     alias tmux="tmux new-session -A -s tmux" "$@"
