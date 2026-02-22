@@ -17,8 +17,10 @@ brew "openjdk"
 # Multimedia
 brew "dvdbackup"
 brew "ffmpeg"
+brew "flac"
 brew "imagemagick"
 brew "lsdvd"
+brew "mpv"
 
 # Node.js
 brew "node"

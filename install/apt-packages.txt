@@ -31,6 +31,7 @@ ffmpeg
 flac
 imagemagick
 lsdvd
+mpv
 poppler-utils
 
 # Node.js

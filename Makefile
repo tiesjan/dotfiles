@@ -38,6 +38,7 @@ config-common: \
 	configure-ack \
 	configure-git \
 	configure-ideavim \
+	configure-mpv \
 	configure-sqlite3 \
 	configure-ssh \
 	configure-tmux \
@@ -86,6 +87,13 @@ configure-libvirt:
 	# Add current user to `libvirt` group
 	getent group libvirt || sudo groupadd libvirt
 	sudo usermod --append --groups libvirt ${USER}
+
+configure-mpv:
+	# Configure mpv
+	mkdir -p ${HOME}/.config/mpv
+	ln -f -s ${PWD}/config/mpv/mpv.conf ${HOME}/.config/mpv/mpv.conf
+	mkdir -p ${HOME}/.config/mpv/script-opts
+	ln -f -s ${PWD}/config/mpv/script-opts/osc.conf ${HOME}/.config/mpv/script-opts/osc.conf
 
 configure-pam-limits:
 	# Set resource limits for `audio` group
