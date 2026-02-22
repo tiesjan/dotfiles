@@ -10,7 +10,7 @@ OUTPUT_SAMPLE_RATE=44100
 bail () {
     if [ $# -gt 0 ]
     then
-        printf "\nError! %s\n" "$@" >&2
+        printf "Error! %s\n" "$@" >&2
     fi
 
     exit 1

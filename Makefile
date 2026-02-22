@@ -161,4 +161,6 @@ install-brew-packages:
 install-scripts:
 	# Link dash scripts
 	sudo mkdir -p /usr/local/bin/
+	sudo ln -f -s ${PWD}/scripts/dvdextract.sh /usr/local/bin/dvdextract
 	sudo ln -f -s ${PWD}/scripts/resample.sh /usr/local/bin/resample
+	sudo ln -f -s ${PWD}/scripts/sanitize.sh /usr/local/bin/sanitize

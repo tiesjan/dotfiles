@@ -84,3 +84,10 @@ if [[ -f "${HOME}/.cargo/env" ]]; then
     # Shell completions for rust tools
     eval "$(rustup completions zsh rustup)"
 fi
+
+# Configure scripts on a per operating system basis
+if [[ "$(uname -s)" = "Darwin" ]]; then
+    export DVDDB_DIR="/Volumes/Cloud/Music/DVDDB"
+elif [[ "$(uname -s)" = "Linux" ]]; then
+    export DVDDB_DIR="${HOME}/Cloud/DVDDB"
+fi
