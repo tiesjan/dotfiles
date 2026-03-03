@@ -418,6 +418,13 @@ main() {
         bail "Path is not a directory: '${dvd_dir}'"
     fi
 
+    # If a `VIDEO_TS` subdirectory is found inside the target directory, use that instead
+    dvd_subdir="${dvd_dir}/VIDEO_TS"
+    if [ -d "${dvd_subdir}" ]
+    then
+        dvd_dir="${dvd_subdir}"
+    fi
+
     if ! dvd_info=$(lsdvd -Oj -x "${dvd_dir}")
     then
         bail "Failed to discover DVD-Video format in directory '${dvd_dir}':\n${dvd_info}"
