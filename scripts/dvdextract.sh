@@ -318,7 +318,7 @@ extract_segments () {
             -i "${ffmpeg_target}" \
             -ss "${segment_start}" -t "${segment_length}" \
             -codec:v copy \
-            -codec:a pcm_s16le -ar 44100 \
+            -codec:a pcm_s16le -ac 2 -ar 44100 \
             -metadata IART="${artist}" -metadata INAM="${title}" \
             -metadata IPRD="${disc_title}" -metadata ISRC="${source}" \
             "${output_dir}/${sanitized_output_filename}"
