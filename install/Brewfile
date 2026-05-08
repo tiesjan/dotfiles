@@ -3,6 +3,7 @@ brew "ack"
 brew "bind"
 brew "jq"
 brew "renameutils"
+brew "ripgrep"
 brew "tree"
 brew "watch"
 
