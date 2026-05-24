@@ -3,12 +3,13 @@ build-essential
 
 # CLI tools
 ack
-curl
 bind9-dnsutils
+curl
 jq
 renameutils
 ripgrep
 tree
+uuid-runtime
 
 # Flatpak
 flatpak
@@ -61,8 +62,8 @@ vim-gtk3
 # Virtualization
 libvirt-daemon-system
 nfs-kernel-server
-qemu-utils
 qemu-system
+qemu-utils
 vagrant
 vagrant-libvirt
 virt-manager
