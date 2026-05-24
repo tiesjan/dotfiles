@@ -80,8 +80,5 @@ heif-gdk-pixbuf
 # Logitech device support
 solaar
 
-# Pinyin input support
-ibus-libpinyin
-
 # Qt5 theming support
 qt5-style-kvantum
