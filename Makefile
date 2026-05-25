@@ -3,6 +3,7 @@ SHELL = /bin/zsh
 PLATFORM := $(shell uname -s)
 
 ifeq ("${PLATFORM}", "Darwin")
+CDDB_DIR = /Volumes/Cloud/Music/CDDB
 VSCODE_CONFIG_DIR := ${HOME}/Library/Application Support/Code/User
 
 config: \
@@ -14,11 +15,11 @@ install: \
 	install-scripts
 
 else ifeq ("${PLATFORM}", "Linux")
+CDDB_DIR := ${HOME}/CDDB
 VSCODE_CONFIG_DIR := ${HOME}/.config/Code/User
 
 config: \
 	config-common \
-	configure-abcde \
 	configure-apt \
 	configure-desktop-gnome \
 	configure-flatpak \
@@ -35,6 +36,7 @@ install: \
 endif
 
 config-common: \
+	configure-abcde \
 	configure-ack \
 	configure-git \
 	configure-ideavim \
@@ -51,6 +53,9 @@ config-common: \
 configure-abcde:
 	# Configure abcde
 	ln -f -s ${PWD}/config/abcde/abcde.conf ${HOME}/.abcde.conf
+	# Link CDDB cache directory
+	mkdir -p "${CDDB_DIR}"
+	if [[ ! -h ${HOME}/.cddb ]]; then ln -f -s ${CDDB_DIR} ${HOME}/.cddb; fi
 
 configure-ack:
 	# Configure Ack

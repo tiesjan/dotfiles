@@ -1,3 +1,7 @@
+# Taps
+tap "tiesjan/extra"
+
+
 # CLI tools
 brew "ack"
 brew "bind"
@@ -16,6 +20,7 @@ brew "maven"
 brew "openjdk"
 
 # Multimedia
+brew "tiesjan/extra/abcde"
 brew "dvdbackup"
 brew "ffmpeg"
 brew "flac"
