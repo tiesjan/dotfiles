@@ -35,6 +35,7 @@ imagemagick
 lsdvd
 mpv
 poppler-utils
+vorbis-tools
 
 # Node.js
 nodejs
