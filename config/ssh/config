@@ -1,10 +1,14 @@
 Host *
     HashKnownHosts no
 
+Host codeberg.org
+    IdentitiesOnly yes
+    IdentityFile ${HOME}/.ssh/codeberg-access
+
 Host github.com gist.github.com
     IdentitiesOnly yes
     IdentityFile ${HOME}/.ssh/github-access
 
 Host raspberrypi.local
-  StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
