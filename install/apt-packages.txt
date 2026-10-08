@@ -34,6 +34,7 @@ flac
 imagemagick
 lsdvd
 mpv
+pngcrush
 poppler-utils
 vorbis-tools
 
